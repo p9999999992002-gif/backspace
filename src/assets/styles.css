@@ -1,0 +1,649 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================
+   THEME VARIABLES
+   ======================================== */
+:root {
+  --bg-primary: #000;
+  --bg-secondary: #0a0a0a;
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --border-color: rgba(255, 255, 255, 0.1);
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --gradient-from: #a855f7;
+  --gradient-to: #ec4899;
+}
+
+[data-theme="light"] {
+  --bg-primary: #c5c6ca;
+  --bg-secondary: #d0d1d5;
+  --text-primary: #1a1a1c;
+  --text-secondary: #4a4a4e;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --card-bg: rgba(195, 196, 200, 0.5);
+  --gradient-from: #7c3aed;
+  --gradient-to: #db2777;
+}
+
+/* ========================================
+   GLOBAL STYLES
+   ======================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background 0.5s cubic-bezier(0.4, 0, 0.2, 1), 
+              color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body.light-theme {
+  background: linear-gradient(to bottom right, #c5c6ca, #d0d1d5, #babbc0) !important;
+}
+
+body.light-theme .stars,
+body.light-theme .stars2,
+body.light-theme .stars3 {
+  opacity: 0.08;
+  filter: invert(1);
+}
+
+body.light-theme .gradient-text {
+  background: linear-gradient(135deg, #7c3aed 0%, #db2777 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-primary);
+}
+
+#app {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ========================================
+   SCROLLBAR
+   ======================================== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--gradient-from), var(--gradient-to));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #c084fc, #f472b6);
+}
+
+/* ========================================
+   CURSOR
+   ======================================== */
+@media (min-width: 768px) {
+  * {
+    cursor: none !important;
+  }
+}
+
+/* ========================================
+   SELECTION
+   ======================================== */
+::selection {
+  background: rgba(168, 85, 247, 0.3);
+  color: #fff;
+}
+
+[data-theme="light"] ::selection {
+  background: rgba(124, 58, 237, 0.25);
+  color: #1a1a1c;
+}
+
+/* ========================================
+   BUBBLE EFFECTS
+   ======================================== */
+.bubble-button {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bubble-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+              height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+[data-theme="light"] .bubble-button::before {
+  background: rgba(124, 58, 237, 0.12);
+}
+
+.bubble-button:hover::before {
+  width: 400%;
+  height: 400%;
+}
+
+.bubble-button-gradient {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.bubble-button-gradient::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+              height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+[data-theme="light"] .bubble-button-gradient::before {
+  background: rgba(124, 58, 237, 0.15);
+}
+
+.bubble-button-gradient:hover::before {
+  width: 400%;
+  height: 400%;
+}
+
+.bubble-text-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.bubble-text-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: rgba(168, 85, 247, 0.15);
+  transform: translateY(-50%);
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+  border-radius: 8px;
+}
+
+[data-theme="light"] .bubble-text-button::before {
+  background: rgba(124, 58, 237, 0.1);
+}
+
+.bubble-text-button:hover::before {
+  width: 100%;
+}
+
+/* ========================================
+   ANIMATIONS
+   ======================================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* ========================================
+   IMAGE LAZY LOAD
+   ======================================== */
+img {
+  transition: opacity 0.3s ease;
+}
+
+img[loading="lazy"] {
+  opacity: 0;
+}
+
+img[loading="lazy"].loaded {
+  opacity: 1;
+}
+
+/* ========================================
+   LIGHT THEME - SIDEBAR BRANCA
+   ======================================== */
+[data-theme="light"] .header,
+[data-theme="light"] nav {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-right: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.04);
+}
+
+/* Logo preta no tema light */
+[data-theme="light"] .logo {
+  filter: brightness(0) saturate(100%);
+}
+
+/* ========================================
+   LIGHT THEME - BACKGROUND CINZA MAIS ESCURO
+   ======================================== */
+[data-theme="light"] body {
+  background: #c5c6ca !important;
+}
+
+[data-theme="light"] #app {
+  background: transparent !important;
+}
+
+[data-theme="light"] .bg-black {
+  background: #c5c6ca !important;
+}
+
+[data-theme="light"] section {
+  background: transparent !important;
+}
+
+/* ========================================
+   LIGHT THEME - PLANETA BRANCO
+   ======================================== */
+[data-theme="gray"] .planet {
+  background: radial-gradient(circle at 30% 30%, 
+    rgba(255, 255, 255, 0.8) 0%,
+    rgba(245, 245, 245, 0.6) 40%,
+    rgba(105, 11, 11, 0.4) 100%) !important;
+  box-shadow: 
+    inset -30px -30px 60px rgba(0, 0, 0, 0.08), 
+    0 0 80px rgba(255, 255, 255, 0.5),
+    0 0 150px rgba(200, 200, 200, 0.3) !important;
+  opacity: 1 !important;
+  display: block !important;
+  visibility: visible !important;
+}
+
+/* ========================================
+   LIGHT THEME TEXT COLORS - PRETO
+   ======================================== */
+[data-theme="light"] .text-white {
+  color: #1a1a1c !important;
+}
+
+[data-theme="light"] .text-gray-400,
+[data-theme="light"] .text-gray-500,
+[data-theme="light"] .text-gray-600 {
+  color: #4a4a4e !important;
+}
+
+[data-theme="light"] .border-white {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] .text-purple-400,
+[data-theme="light"] .text-purple-500 {
+  color: #7c3aed !important;
+}
+
+[data-theme="light"] .text-blue-400,
+[data-theme="light"] .text-blue-500 {
+  color: #2563eb !important;
+}
+
+[data-theme="light"] .text-pink-400,
+[data-theme="light"] .text-pink-500 {
+  color: #db2777 !important;
+}
+
+[data-theme="light"] .text-cyan-400,
+[data-theme="light"] .text-cyan-500 {
+  color: #0891b2 !important;
+}
+
+[data-theme="light"] h1,
+[data-theme="light"] h2,
+[data-theme="light"] h3,
+[data-theme="light"] h4,
+[data-theme="light"] p:not(.text-purple-400):not(.text-blue-400):not(.text-pink-400):not(.text-cyan-400),
+[data-theme="light"] span:not(.text-purple-400):not(.text-blue-400):not(.text-pink-400):not(.text-cyan-400),
+[data-theme="light"] label {
+  color: #1a1a1c !important;
+}
+
+/* ========================================
+   FIX DEFINITIVO - CARDS SEMPRE VISÍVEIS
+   ======================================== */
+.project-card,
+.service-card {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.project-card *,
+.service-card * {
+  display: inline !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+.project-card h3,
+.project-card h4,
+.project-card p,
+.project-card div,
+.service-card h3,
+.service-card h4,
+.service-card p,
+.service-card div {
+  display: block !important;
+}
+
+.project-card .flex,
+.service-card .flex {
+  display: flex !important;
+}
+
+.project-card .inline-flex,
+.service-card .inline-flex,
+.project-card button,
+.service-card button {
+  display: inline-flex !important;
+}
+
+.project-card svg,
+.service-card svg {
+  display: inline-block !important;
+}
+
+/* ========================================
+   LIGHT THEME CARDS - COR CINZA
+   ======================================== */
+[data-theme="light"] .project-card,
+[data-theme="light"] .service-card {
+  background: rgba(195, 196, 200, 0.5) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06) !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+[data-theme="light"] .project-card *,
+[data-theme="light"] .service-card * {
+  display: inline !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+[data-theme="light"] .project-card h3,
+[data-theme="light"] .project-card h4,
+[data-theme="light"] .project-card p,
+[data-theme="light"] .project-card div,
+[data-theme="light"] .service-card h3,
+[data-theme="light"] .service-card h4,
+[data-theme="light"] .service-card p,
+[data-theme="light"] .service-card div {
+  display: block !important;
+}
+
+[data-theme="light"] .project-card .flex,
+[data-theme="light"] .service-card .flex {
+  display: flex !important;
+}
+
+[data-theme="light"] .project-card .inline-flex,
+[data-theme="light"] .service-card .inline-flex,
+[data-theme="light"] .project-card button,
+[data-theme="light"] .service-card button {
+  display: inline-flex !important;
+}
+
+[data-theme="light"] .project-card svg,
+[data-theme="light"] .service-card svg {
+  display: inline-block !important;
+}
+
+[data-theme="light"] .project-card h3,
+[data-theme="light"] .service-card h3,
+[data-theme="light"] .service-card h4 {
+  color: #1a1a1c !important;
+}
+
+[data-theme="light"] .project-card p,
+[data-theme="light"] .service-card p {
+  color: #4a4a4e !important;
+}
+
+[data-theme="light"] .project-card:hover,
+[data-theme="light"] .service-card:hover {
+  background: rgba(205, 206, 210, 0.6) !important;
+  border-color: rgba(124, 58, 237, 0.2) !important;
+  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.12),
+              0 4px 12px rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] .project-image {
+  background: linear-gradient(135deg, 
+    rgba(210, 211, 215, 0.6), 
+    rgba(220, 221, 225, 0.5)) !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+[data-theme="light"] .service-icon {
+  box-shadow: 0 8px 24px rgba(124, 58, 237, 0.2);
+  display: flex !important;
+}
+
+/* Remove pseudo-elementos que podem causar bugs */
+[data-theme="light"] .project-card::before,
+[data-theme="light"] .project-card::after,
+[data-theme="light"] .service-card::before,
+[data-theme="light"] .service-card::after {
+  display: none !important;
+}
+
+/* ========================================
+   LIGHT THEME - CONTACT INFO CARDS CINZA ESCURO
+   ======================================== */
+[data-theme="light"] .bg-white\/5:not(form):not(form *),
+[data-theme="light"] .bg-white\/10:not(form):not(form *) {
+  background: rgba(180, 180, 185, 0.45) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] .bg-white\/5:hover,
+[data-theme="light"] .bg-white\/10:hover {
+  background: rgba(170, 170, 175, 0.55) !important;
+  border-color: rgba(124, 58, 237, 0.2) !important;
+}
+
+/* ========================================
+   LIGHT THEME FORMS - MESMO TOM DO EMAIL
+   ======================================== */
+[data-theme="light"] .form-input,
+[data-theme="light"] input[type="text"],
+[data-theme="light"] input[type="email"],
+[data-theme="light"] input[type="password"],
+[data-theme="light"] textarea,
+[data-theme="light"] select {
+  background: rgba(195, 196, 200, 0.5) !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  color: #1a1a1c !important;
+  box-shadow: none;
+}
+
+[data-theme="light"] .form-input::placeholder,
+[data-theme="light"] input::placeholder,
+[data-theme="light"] textarea::placeholder {
+  color: #6b6c70 !important;
+  opacity: 0.7;
+}
+
+[data-theme="light"] .form-input:focus,
+[data-theme="light"] input:focus,
+[data-theme="light"] textarea:focus {
+  background: rgba(185, 186, 190, 0.6) !important;
+  border-color: rgba(124, 58, 237, 0.4) !important;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.08);
+  outline: none;
+}
+
+[data-theme="light"] form .bg-white\/5,
+[data-theme="light"] form .bg-white\/10 {
+  background: rgba(210, 211, 215, 0.5) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ========================================
+   LIGHT THEME HEADER
+   ======================================== */
+[data-theme="light"] .nav-dot .dot {
+  background: #a9aaae !important;
+}
+
+[data-theme="light"] .nav-dot.active .dot,
+[data-theme="light"] .nav-dot:hover .dot {
+  background: #7c3aed !important;
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.6);
+}
+
+[data-theme="light"] .nav-label {
+  color: #1a1a1c !important;
+}
+
+[data-theme="light"] .social-icon-sidebar {
+  color: #6b6c70 !important;
+}
+
+[data-theme="light"] .social-icon-sidebar:hover {
+  color: #7c3aed !important;
+}
+
+/* ========================================
+   LIGHT THEME FOOTER
+   ======================================== */
+[data-theme="light"] footer {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ========================================
+   LIGHT THEME PAGE NUMBERS
+   ======================================== */
+[data-theme="light"] .text-white\/5 {
+  color: rgba(0, 0, 0, 0.02) !important;
+}
+
+/* ========================================
+   LIGHT THEME PARTICLES & GRIDS
+   ======================================== */
+[data-theme="light"] .particle {
+  background: rgba(124, 58, 237, 0.25) !important;
+}
+
+[data-theme="light"] .grid-lines {
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px) !important;
+}
+
+[data-theme="light"] .grid-pattern {
+  background-image: 
+    linear-gradient(rgba(124, 58, 237, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.06) 1px, transparent 1px) !important;
+}
+
+/* ========================================
+   LIGHT THEME MOBILE
+   ======================================== */
+[data-theme="light"] .mobile-nav-link {
+  color: #1a1a1c !important;
+}
+
+[data-theme="light"] button svg {
+  color: #1a1a1c !important;
+}
+
+/* ========================================
+   THEME TRANSITIONS
+   ======================================== */
+body,
+section,
+.header,
+.nav-dot .dot,
+.form-input,
+input,
+textarea,
+.project-card,
+.service-card,
+footer,
+.planet {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ========================================
+   SCROLL PROGRESS BAR
+   ======================================== */
+[data-theme="light"] .scroll-progress-container {
+  background: rgba(0, 0, 0, 0.05) !important;
+}
