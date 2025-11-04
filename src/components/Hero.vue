@@ -8,14 +8,9 @@
       <div class="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-blue-900/10"></div>
     </div>
 
-    <!-- Planet - SEMPRE VISÍVEL -->
-    <div class="absolute bottom-0 right-0 w-[600px] h-[600px] md:w-[800px] md:h-[800px] opacity-30 md:opacity-40 planet-container">
-      <div class="planet"></div>
-    </div>
-
     <!-- Content -->
     <div class="container mx-auto px-6 md:px-12 relative z-10">
-      <div class="max-w-4xl fade-in-up">
+      <div class="max-w-5xl fade-in-up">
         <div class="space-y-6 md:space-y-8">
           <!-- Subtitle -->
           <div class="flex items-center space-x-4">
@@ -23,28 +18,34 @@
             <p class="text-xs md:text-sm text-gray-400 tracking-[0.3em] uppercase">Backspace</p>
           </div>
 
-          <!-- Title with Typing Animation -->
-          <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-tight">
-            <span class="text-white typing-text">{{ typedText }}</span>
-            <span class="cursor-blink">|</span>
-            <br/>
-            <span class="text-white">& </span><span class="gradient-text">CLOUD</span>
+          <!-- Title -->
+          <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight">
+            <span class="text-white">A BASE INTELIGENTE</span><br/>
+            <span class="text-white">QUE O </span><span class="gradient-text">CRESCIMENTO</span><span class="text-white"> DO</span><br/>
+            <span class="text-white">SEU NEGÓCIO PRECISA</span>
           </h1>
 
           <!-- Description -->
-          <p class="text-gray-400 text-base md:text-lg leading-relaxed max-w-2xl">
-            Transformando empresas por meio de automação inteligente e infraestrutura de nuvem escalável. Navegue pelo futuro com precisão e inovação.
+          <p class="text-gray-400 text-base md:text-lg leading-relaxed max-w-3xl">
+            Crescer exige mais que tecnologia: exige estrutura. A <span class="text-white font-semibold">Backspace</span> projeta, de graça, a arquitetura em nuvem perfeita para o seu negócio automatizada, escalável e pronta para o futuro
           </p>
 
-          <!-- CTA with Bubble Effect -->
-          <div class="pt-4">
-            <button @click="handleCTAClick" class="bubble-button inline-flex items-center space-x-3 group relative overflow-hidden px-6 py-3 border border-purple-500/50 rounded-full transition-all duration-300 hover:border-purple-400">
-              <span class="relative z-10 text-sm tracking-widest text-white font-medium">START PROJECT</span>
-              <div class="relative z-10 w-10 h-10 rounded-full border border-purple-500/50 flex items-center justify-center group-hover:border-white transition-all duration-300">
-                <svg class="w-4 h-4 text-purple-500 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                </svg>
-              </div>
+          <!-- CTA Buttons -->
+          <div class="pt-4 flex flex-col sm:flex-row gap-4">
+            <!-- Button 1: Entrar em contato -->
+            <button @click="handleContactClick" class="bubble-button inline-flex items-center justify-center space-x-2 group relative overflow-hidden px-6 py-3 bg-transparent border border-white/30 rounded-full transition-all duration-300 hover:border-white hover:bg-white/5">
+              <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
+              <span class="relative z-10 text-sm tracking-wide text-white font-medium">Entrar em contato</span>
+            </button>
+
+            <!-- Button 2: Receba uma infraestrutura -->
+            <button @click="handleInfrastructureClick" class="bubble-button-gradient inline-flex items-center justify-center space-x-2 group relative overflow-hidden px-6 py-3 bg-gradient-to-r from-purple-600 via-purple-500 to-blue-500 rounded-full transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-105">
+              <span class="relative z-10 text-sm tracking-wide text-white font-semibold">Receba uma infraestrutura personalizada <span class="font-black">GRATUITAMENTE</span></span>
+              <svg class="w-5 h-5 text-white relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
             </button>
           </div>
         </div>
@@ -65,29 +66,11 @@
 <script>
 export default {
   name: 'Hero',
-  data() {
-    return {
-      fullText: 'AUTOMATION',
-      typedText: '',
-      typingSpeed: 150
-    }
-  },
-  mounted() {
-    this.typeText()
-  },
   methods: {
-    typeText() {
-      let i = 0
-      const type = () => {
-        if (i < this.fullText.length) {
-          this.typedText += this.fullText.charAt(i)
-          i++
-          setTimeout(type, this.typingSpeed)
-        }
-      }
-      setTimeout(type, 500)
+    handleContactClick() {
+      document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })
     },
-    handleCTAClick() {
+    handleInfrastructureClick() {
       document.querySelector('#contact').scrollIntoView({ behavior: 'smooth' })
     }
   }
@@ -100,20 +83,6 @@ export default {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-}
-
-.typing-text {
-  display: inline-block;
-}
-
-.cursor-blink {
-  animation: blink 1s infinite;
-  font-weight: 100;
-}
-
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
 }
 
 /* Stars */
@@ -148,35 +117,6 @@ export default {
 @keyframes animStar {
   from { transform: translateY(0px); }
   to { transform: translateY(-2000px); }
-}
-
-/* Planet Container */
-.planet-container {
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Planet - SEMPRE VISÍVEL */
-.planet {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, 
-    rgba(168, 85, 247, 0.3) 0%,
-    rgba(59, 130, 246, 0.2) 40%,
-    rgba(30, 30, 60, 0.4) 100%);
-  box-shadow: 
-    inset -40px -40px 80px rgba(0, 0, 0, 0.5), 
-    0 0 100px rgba(168, 85, 247, 0.2);
-  animation: planetRotate 100s linear infinite;
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-}
-
-@keyframes planetRotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
 }
 
 @keyframes scroll {
