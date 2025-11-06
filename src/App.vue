@@ -5,7 +5,6 @@
     <ThemeToggle @theme-changed="handleThemeChange" />
     <Header />
     <Hero />
-    <About />
     <Projects />
     <Services />
     <Contact />
@@ -19,7 +18,6 @@ import CustomCursor from './components/CustomCursor.vue'
 import ThemeToggle from './components/ThemeToggle.vue'
 import Header from './components/Header.vue'
 import Hero from './components/Hero.vue'
-import About from './components/About.vue'
 import Projects from './components/Projects.vue'
 import Services from './components/Services.vue'
 import Contact from './components/Contact.vue'
@@ -33,7 +31,6 @@ export default {
     ThemeToggle,
     Header,
     Hero,
-    About,
     Projects,
     Services,
     Contact,

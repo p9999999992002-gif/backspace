@@ -56,7 +56,7 @@
               </div>
               <div>
                 <h4 class="text-white text-sm md:text-base font-semibold mb-1">Equipe</h4>
-                <p class="text-gray-400 text-sm md:text-base">Ryan Dias, Pedro Dias, Gabriel Fernandes</p>
+                <p class="text-gray-400 text-sm md:text-base">Ryan Dias, Pedro Dias, Gabriel Fernandes, Danilo Santiago</p>
               </div>
             </div>
           </div>
