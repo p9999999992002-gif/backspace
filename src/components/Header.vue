@@ -101,7 +101,7 @@ export default {
     return {
       mobileMenuOpen: false,
       activeSection: 'home',
-      currentLogo: '/logo.png'
+      currentLogo: `${import.meta.env.BASE_URL}logo.png`
     }
   },
   mounted() {
@@ -162,7 +162,9 @@ export default {
     },
     checkTheme() {
       const theme = document.documentElement.getAttribute('data-theme')
-      this.currentLogo = theme === 'light' ? '/logolight.png' : '/logo.png'
+      this.currentLogo = theme === 'light'
+        ? `${import.meta.env.BASE_URL}logolight.png`
+        : `${import.meta.env.BASE_URL}logo.png`
     }
   }
 }
