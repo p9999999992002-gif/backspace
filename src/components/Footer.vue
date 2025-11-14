@@ -40,7 +40,6 @@
           <h4 class="text-black font-bold mb-4 text-sm tracking-widest">LINKS RÁPIDOS</h4>
           <ul class="space-y-2">
             <li><a href="#home" class="footer-link bubble-text-button inline-block px-2 py-1 rounded">Início</a></li>
-            <li><a href="#about" class="footer-link bubble-text-button inline-block px-2 py-1 rounded">Sobre</a></li>
             <li><a href="#projects" class="footer-link bubble-text-button inline-block px-2 py-1 rounded">Projetos</a></li>
             <li><a href="#services" class="footer-link bubble-text-button inline-block px-2 py-1 rounded">Serviços</a></li>
             <li><a href="#contact" class="footer-link bubble-text-button inline-block px-2 py-1 rounded">Contato</a></li>

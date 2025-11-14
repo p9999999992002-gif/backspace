@@ -24,16 +24,6 @@
           <span class="nav-label">HOME</span>
         </a>
         <a 
-          href="#about" 
-          @click.prevent="scrollToSection('about')"
-          class="nav-dot group" 
-          :class="{ active: activeSection === 'about' }"
-          title="About"
-        >
-          <span class="dot"></span>
-          <span class="nav-label">ABOUT</span>
-        </a>
-        <a 
           href="#projects" 
           @click.prevent="scrollToSection('projects')"
           class="nav-dot group" 
@@ -86,7 +76,6 @@
       </button>
       
       <a href="#home" @click="closeMobileMenu" class="bubble-text-button mobile-nav-link px-8 py-3 rounded-lg">HOME</a>
-      <a href="#about" @click="closeMobileMenu" class="bubble-text-button mobile-nav-link px-8 py-3 rounded-lg">ABOUT</a>
       <a href="#projects" @click="closeMobileMenu" class="bubble-text-button mobile-nav-link px-8 py-3 rounded-lg">PROJECTS</a>
       <a href="#services" @click="closeMobileMenu" class="bubble-text-button mobile-nav-link px-8 py-3 rounded-lg">SERVICES</a>
       <a href="#contact" @click="closeMobileMenu" class="bubble-text-button mobile-nav-link px-8 py-3 rounded-lg">CONTACT</a>
