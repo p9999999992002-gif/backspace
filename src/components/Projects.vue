@@ -38,12 +38,6 @@
             <p class="text-gray-400 text-sm leading-relaxed mb-4">
               Processamento automatizado de documentos e preenchimento de formulários para sistemas jurídicos brasileiros, reduzindo o tempo de processamento em 80%.
             </p>
-            <button class="bubble-text-button inline-flex items-center text-sm text-purple-400 hover:text-white transition-colors px-4 py-2 rounded-lg">
-              Ver Estudo de Caso
-              <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-              </svg>
-            </button>
           </div>
         </div>
 
@@ -66,12 +60,6 @@
             <p class="text-gray-400 text-sm leading-relaxed mb-4">
               Implementação de arquitetura em nuvem escalável com alta disponibilidade e backups automatizados para cliente corporativo.
             </p>
-            <button class="bubble-text-button inline-flex items-center text-sm text-blue-400 hover:text-white transition-colors px-4 py-2 rounded-lg">
-              Ver Estudo de Caso
-              <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-              </svg>
-            </button>
           </div>
         </div>
 
@@ -94,12 +82,6 @@
             <p class="text-gray-400 text-sm leading-relaxed mb-4">
               Dashboard abrangente para rastreamento de notebooks, impressoras e equipamentos de TI com gerenciamento de inventário em tempo real.
             </p>
-            <button class="bubble-text-button inline-flex items-center text-sm text-pink-400 hover:text-white transition-colors px-4 py-2 rounded-lg">
-              Ver Estudo de Caso
-              <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-              </svg>
-            </button>
           </div>
         </div>
 
@@ -122,17 +104,10 @@
             <p class="text-gray-400 text-sm leading-relaxed mb-4">
               Solução avançada de web scraping usando Playwright para coleta e processamento automatizado de dados em escala.
             </p>
-            <button class="bubble-text-button inline-flex items-center text-sm text-cyan-400 hover:text-white transition-colors px-4 py-2 rounded-lg">
-              Ver Estudo de Caso
-              <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-              </svg>
-            </button>
           </div>
         </div>
       </div>
     </div>
-
     <!-- Page Number -->
     <div class="absolute bottom-12 right-12 text-6xl md:text-8xl font-black text-white/5 tracking-tighter pointer-events-none">02</div>
   </section>

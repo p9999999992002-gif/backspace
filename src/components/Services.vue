@@ -30,12 +30,6 @@
           <p class="text-sm md:text-base text-gray-400 leading-relaxed mb-4 md:mb-6">
             Simplifique seus processos de negócios com automação inteligente que economiza tempo e reduz custos operacionais.
           </p>
-          <button class="bubble-text-button inline-flex items-center text-sm md:text-base text-purple-400 hover:text-white transition-colors px-4 py-2 rounded-lg">
-            Saiba Mais
-            <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-            </svg>
-          </button>
         </div>
 
         <!-- Service Card 2 -->
@@ -49,12 +43,6 @@
           <p class="text-sm md:text-base text-gray-400 leading-relaxed mb-4 md:mb-6">
             Construa soluções em nuvem escaláveis e seguras que crescem com as necessidades do seu negócio e garantem alta disponibilidade.
           </p>
-          <button class="bubble-text-button inline-flex items-center text-sm md:text-base text-purple-400 hover:text-white transition-colors px-4 py-2 rounded-lg">
-            Saiba Mais
-            <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-            </svg>
-          </button>
         </div>
 
         <!-- Service Card 3 -->
@@ -68,25 +56,16 @@
           <p class="text-sm md:text-base text-gray-400 leading-relaxed mb-4 md:mb-6">
             Transforme seu negócio com soluções digitais de ponta, análise de dados e estratégias inovadoras.
           </p>
-          <button class="bubble-text-button inline-flex items-center text-sm md:text-base text-purple-400 hover:text-white transition-colors px-4 py-2 rounded-lg">
-            Saiba Mais
-            <svg class="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-            </svg>
-          </button>
         </div>
       </div>
 
       <!-- CTA Section -->
       <div class="mt-12 md:mt-20 text-center fade-in-up">
-        <button class="bubble-button-gradient px-8 md:px-12 py-4 md:py-5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white text-base md:text-lg font-bold hover:shadow-2xl hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105 relative overflow-hidden">
-          <span class="relative z-10">Ver Todos os Serviços</span>
-        </button>
       </div>
     </div>
 
     <!-- Page Number -->
-    <div class="absolute bottom-6 md:bottom-10 right-6 md:right-10 text-6xl md:text-8xl font-black text-white/5 tracking-tighter pointer-events-none">04</div>
+    <div class="absolute bottom-6 md:bottom-10 right-6 md:right-10 text-6xl md:text-8xl font-black text-white/5 tracking-tighter pointer-events-none">03</div>
   </section>
 </template>
 
