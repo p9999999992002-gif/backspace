@@ -1,11 +1,40 @@
 <template>
-  <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-black ml-20 md:ml-24">
+  <section 
+    id="home" 
+    class="relative min-h-screen flex items-center justify-center overflow-hidden bg-black ml-20 md:ml-24"
+  >
     <!-- Space Background -->
     <div class="absolute inset-0">
       <div class="stars"></div>
       <div class="stars2"></div>
       <div class="stars3"></div>
       <div class="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-blue-900/10"></div>
+    </div>
+
+    <!-- Torre 3D Animada -->
+    <div class="loader-container">
+      <div class="loader">
+        <div class="box box-1">
+          <div class="side-left"></div>
+          <div class="side-right"></div>
+          <div class="side-top"></div>
+        </div>
+        <div class="box box-2">
+          <div class="side-left"></div>
+          <div class="side-right"></div>
+          <div class="side-top"></div>
+        </div>
+        <div class="box box-3">
+          <div class="side-left"></div>
+          <div class="side-right"></div>
+          <div class="side-top"></div>
+        </div>
+        <div class="box box-4">
+          <div class="side-left"></div>
+          <div class="side-right"></div>
+          <div class="side-top"></div>
+        </div>
+      </div>
     </div>
 
     <!-- Content -->
@@ -85,7 +114,7 @@ export default {
   background-clip: text;
 }
 
-/* Stars */
+/* Stars Animation */
 .stars, .stars2, .stars3 {
   width: 1px;
   height: 1px;
@@ -126,5 +155,260 @@ export default {
 
 .animate-scroll {
   animation: scroll 2s ease-in-out infinite;
+}
+
+/* ========================================
+   TORRE 3D - BRILHO SUAVE
+   ======================================== */
+
+.loader-container {
+  position: absolute;
+  top: 35%;
+  right: 25%;
+  transform: translate(0, -50%);
+  z-index: 5;
+  filter: drop-shadow(0 0 30px rgba(95, 168, 245, 0.4)) 
+          drop-shadow(0 0 60px rgba(47, 133, 224, 0.3));
+}
+
+.loader {
+  scale: 4.5;
+  height: 70px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.box {
+  position: absolute;
+  opacity: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.side-left {
+  position: absolute;
+  background-color: #286cb5;
+  width: 28px;
+  height: 8px;
+  transform: skew(0deg, -25deg);
+  top: 20px;
+  left: 14px;
+}
+
+.side-right {
+  position: absolute;
+  background-color: #816fe6;
+  width: 28px;
+  height: 8px;
+  transform: skew(0deg, 25deg);
+  top: 20px;
+  left: -14px;
+}
+
+.side-top {
+  position: absolute;
+  background-color: #7eacdd;
+  width: 28px;
+  height: 28px;
+  rotate: 45deg;
+  transform: skew(-20deg, -20deg);
+}
+
+.box-1 {
+  animation: from-left 4s infinite;
+}
+
+.box-2 {
+  animation: from-right 4s infinite;
+  animation-delay: 1s;
+}
+
+.box-3 {
+  animation: from-left 4s infinite;
+  animation-delay: 2s;
+}
+
+.box-4 {
+  animation: from-right 4s infinite;
+  animation-delay: 3s;
+}
+
+@keyframes from-left {
+  0% {
+    z-index: 20;
+    opacity: 0;
+    transform: translateX(-50%) translate(-28px, -8px);
+  }
+  20% {
+    z-index: 10;
+    opacity: 1;
+    transform: translateX(-50%) translate(0px, 0px);
+  }
+  40% {
+    z-index: 9;
+    transform: translateX(-50%) translate(0px, 6px);
+  }
+  60% {
+    z-index: 8;
+    transform: translateX(-50%) translate(0px, 12px);
+  }
+  80% {
+    z-index: 7;
+    opacity: 1;
+    transform: translateX(-50%) translate(0px, 18px);
+  }
+  100% {
+    z-index: 5;
+    transform: translateX(-50%) translate(0px, 42px);
+    opacity: 0;
+  }
+}
+
+@keyframes from-right {
+  0% {
+    z-index: 20;
+    opacity: 0;
+    transform: translateX(-50%) translate(28px, -8px);
+  }
+  20% {
+    z-index: 10;
+    opacity: 1;
+    transform: translateX(-50%) translate(0px, 0px);
+  }
+  40% {
+    z-index: 9;
+    transform: translateX(-50%) translate(0px, 6px);
+  }
+  60% {
+    z-index: 8;
+    transform: translateX(-50%) translate(0px, 12px);
+  }
+  80% {
+    z-index: 7;
+    opacity: 1;
+    transform: translateX(-50%) translate(0px, 18px);
+  }
+  100% {
+    z-index: 5;
+    transform: translateX(-50%) translate(0px, 42px);
+    opacity: 0;
+  }
+}
+
+/* ========================================
+   RESPONSIVIDADE
+   ======================================== */
+
+@media (max-width: 1600px) {
+  .loader-container {
+    right: 20%;
+  }
+}
+
+@media (max-width: 1400px) {
+  .loader-container {
+    right: 18%;
+  }
+  
+  .loader {
+    scale: 4;
+  }
+}
+
+@media (max-width: 1200px) {
+  .loader-container {
+    right: 15%;
+    top: 38%;
+  }
+  
+  .loader {
+    scale: 3.5;
+    height: 60px;
+    width: 50px;
+  }
+  
+  .side-left,
+  .side-right {
+    width: 24px;
+    height: 7px;
+    top: 18px;
+    left: 12px;
+  }
+  
+  .side-right {
+    left: -12px;
+  }
+  
+  .side-top {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .loader-container {
+    right: 8%;
+    top: 30%;
+    filter: drop-shadow(0 0 20px rgba(95, 168, 245, 0.35)) 
+            drop-shadow(0 0 40px rgba(47, 133, 224, 0.25));
+  }
+  
+  .loader {
+    scale: 2.8;
+    height: 50px;
+    width: 45px;
+  }
+  
+  .side-left,
+  .side-right {
+    width: 20px;
+    height: 6px;
+    top: 16px;
+    left: 10px;
+  }
+  
+  .side-right {
+    left: -10px;
+  }
+  
+  .side-top {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .loader-container {
+    right: 5%;
+    top: 28%;
+    filter: drop-shadow(0 0 15px rgba(95, 168, 245, 0.3)) 
+            drop-shadow(0 0 30px rgba(47, 133, 224, 0.2));
+  }
+  
+  .loader {
+    scale: 2;
+    height: 40px;
+    width: 35px;
+  }
+  
+  .side-left,
+  .side-right {
+    width: 16px;
+    height: 5px;
+    top: 14px;
+    left: 8px;
+  }
+  
+  .side-right {
+    left: -8px;
+  }
+  
+  .side-top {
+    width: 16px;
+    height: 16px;
+  }
 }
 </style>

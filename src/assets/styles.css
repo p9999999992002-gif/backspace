@@ -647,3 +647,196 @@ footer,
 [data-theme="light"] .scroll-progress-container {
   background: rgba(0, 0, 0, 0.05) !important;
 }
+/* ========================================
+   WATER DROP 3D EFFECT
+   ======================================== */
+
+.water-drop {
+  position: absolute;
+  top: 15%;
+  right: 10%;
+  width: 280px;
+  height: 350px;
+  background: radial-gradient(
+    circle at 35% 25%,
+    rgba(168, 85, 247, 0.9) 0%,
+    rgba(236, 72, 153, 0.8) 45%,
+    rgba(124, 58, 237, 0.95) 100%
+  );
+  border-radius: 45% 55% 60% 40% / 55% 45% 55% 45%;
+  box-shadow: 
+    inset -25px -30px 50px rgba(0, 0, 0, 0.3),
+    inset 20px 25px 40px rgba(255, 255, 255, 0.2),
+    0 30px 80px rgba(168, 85, 247, 0.5),
+    0 0 120px rgba(236, 72, 153, 0.4);
+  filter: blur(0.5px);
+  animation: float 8s ease-in-out infinite,
+             dropRotate 12s linear infinite,
+             dropPulse 6s ease-in-out infinite;
+  z-index: 1;
+  opacity: 0.85;
+  transform-style: preserve-3d;
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Brilho superior da gota */
+.water-drop::before {
+  content: '';
+  position: absolute;
+  top: 12%;
+  left: 25%;
+  width: 90px;
+  height: 90px;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 255, 255, 0.2) 40%,
+    transparent 70%
+  );
+  border-radius: 50%;
+  filter: blur(8px);
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+/* Reflexo menor */
+.water-drop::after {
+  content: '';
+  position: absolute;
+  bottom: 20%;
+  right: 22%;
+  width: 50px;
+  height: 50px;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.35) 0%,
+    transparent 60%
+  );
+  border-radius: 50%;
+  filter: blur(6px);
+  animation: shimmer 4s ease-in-out infinite reverse;
+}
+
+/* ========================================
+   LIGHT THEME - ÁGUA AZUL CLARA
+   ======================================== */
+
+[data-theme="light"] .water-drop {
+  background: radial-gradient(
+    circle at 35% 25%,
+    rgba(59, 130, 246, 0.85) 0%,
+    rgba(14, 165, 233, 0.75) 45%,
+    rgba(37, 99, 235, 0.9) 100%
+  );
+  box-shadow: 
+    inset -25px -30px 50px rgba(0, 0, 0, 0.15),
+    inset 20px 25px 40px rgba(255, 255, 255, 0.4),
+    0 30px 80px rgba(59, 130, 246, 0.4),
+    0 0 120px rgba(14, 165, 233, 0.3);
+  opacity: 0.9;
+}
+
+[data-theme="light"] .water-drop::before {
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(255, 255, 255, 0.4) 40%,
+    transparent 70%
+  );
+}
+
+[data-theme="light"] .water-drop::after {
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 255, 255, 0.6) 0%,
+    transparent 60%
+  );
+}
+
+/* ========================================
+   ANIMAÇÕES
+   ======================================== */
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-25px) translateX(15px);
+  }
+  50% {
+    transform: translateY(-15px) translateX(-10px);
+  }
+  75% {
+    transform: translateY(-30px) translateX(8px);
+  }
+}
+
+@keyframes dropRotate {
+  0% {
+    transform: rotate(0deg);
+    border-radius: 45% 55% 60% 40% / 55% 45% 55% 45%;
+  }
+  25% {
+    border-radius: 55% 45% 40% 60% / 45% 55% 45% 55%;
+  }
+  50% {
+    transform: rotate(180deg);
+    border-radius: 50% 50% 55% 45% / 55% 45% 50% 50%;
+  }
+  75% {
+    border-radius: 40% 60% 50% 50% / 50% 50% 60% 40%;
+  }
+  100% {
+    transform: rotate(360deg);
+    border-radius: 45% 55% 60% 40% / 55% 45% 55% 45%;
+  }
+}
+
+@keyframes dropPulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes shimmer {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.1);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .water-drop {
+    width: 180px;
+    height: 220px;
+    top: 8%;
+    right: 5%;
+    opacity: 0.6;
+  }
+  
+  .water-drop::before {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .water-drop::after {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .water-drop {
+    width: 120px;
+    height: 150px;
+    opacity: 0.5;
+  }
+}
