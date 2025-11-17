@@ -1,5 +1,5 @@
 <template>
-  <footer class="relative bg-black border-t border-white/10 py-12 md:py-16 ml-20 md:ml-24">
+  <footer class="relative bg-black border-t border-white/10 py-12 md:py-16 md:ml-24">
     <div class="container mx-auto px-6 md:px-12">
       <!-- Newsletter Section -->
       <div class="max-w-4xl mx-auto text-center mb-12 md:mb-16 fade-in-up">
@@ -23,21 +23,13 @@
         <!-- Brand -->
         <div class="space-y-4 text-center md:text-left">
           <p class="text-gray-400 text-sm leading-relaxed"> 
-            <BR></BR>
-            <BR></BR>
-            <BR></BR>
-            <BR></BR>
-            <BR></BR>
-            <BR></BR>
-            <BR></BR>
-            <BR></BR>   
             Transformando negócios através de automação e soluções em nuvem.
           </p>
         </div>
 
         <!-- Quick Links -->
         <div class="text-center md:text-left">
-          <h4 class="text-black font-bold mb-4 text-sm tracking-widest">LINKS RÁPIDOS</h4>
+          <h4 class="text-white font-bold mb-4 text-sm tracking-widest">LINKS RÁPIDOS</h4>
           <ul class="space-y-2">
             <li><a href="#home" class="footer-link bubble-text-button inline-block px-2 py-1 rounded">Início</a></li>
             <li><a href="#projects" class="footer-link bubble-text-button inline-block px-2 py-1 rounded">Projetos</a></li>
@@ -48,12 +40,10 @@
 
         <!-- Contact -->
         <div class="text-center md:text-left">
-          <h4 class="text-black font-bold mb-4 text-sm tracking-widest">CONTATO</h4>
-          <ul class="space-y-2 text-sm text-black-400">
+          <h4 class="text-white font-bold mb-4 text-sm tracking-widest">CONTATO</h4>
+          <ul class="space-y-2 text-sm text-gray-400">
             <li>contact@backspace.com</li>
             <li>São Paulo, SP - Brasil</li>
-            <li class="pt-4 flex gap-4 justify-center md:justify-start">
-            </li>
           </ul>
         </div>
       </div>
@@ -78,7 +68,6 @@ export default {
   mounted() {
     this.checkTheme()
     
-    // Observer para mudanças de tema
     this.themeObserver = new MutationObserver(() => {
       this.checkTheme()
     })
@@ -109,5 +98,12 @@ export default {
 <style scoped>
 .footer-link {
   @apply text-sm text-gray-400 hover:text-purple-400 transition-colors;
+}
+
+/* Remove margin-left no mobile */
+@media (max-width: 768px) {
+  footer {
+    margin-left: 0 !important;
+  }
 }
 </style>

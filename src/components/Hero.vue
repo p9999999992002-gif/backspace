@@ -1,7 +1,7 @@
 <template>
   <section 
     id="home" 
-    class="relative min-h-screen flex items-center justify-center overflow-hidden bg-black ml-20 md:ml-24"
+    class="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
   >
     <!-- Space Background -->
     <div class="absolute inset-0">
@@ -11,7 +11,7 @@
       <div class="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-blue-900/10"></div>
     </div>
 
-    <!-- Torre 3D Animada -->
+    <!-- Torre 3D Animada - Acima do texto no mobile -->
     <div class="loader-container">
       <div class="loader">
         <div class="box box-1">
@@ -61,7 +61,6 @@
 
           <!-- CTA Buttons -->
           <div class="pt-4 flex flex-col sm:flex-row gap-4">
-            <!-- Button 1: Entrar em contato -->
             <button @click="handleContactClick" class="bubble-button inline-flex items-center justify-center space-x-2 group relative overflow-hidden px-6 py-3 bg-transparent border border-white/30 rounded-full transition-all duration-300 hover:border-white hover:bg-white/5">
               <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
@@ -69,7 +68,6 @@
               <span class="relative z-10 text-sm tracking-wide text-white font-medium">Entrar em contato</span>
             </button>
 
-            <!-- Button 2: Receba uma infraestrutura -->
             <button @click="handleInfrastructureClick" class="bubble-button-gradient inline-flex items-center justify-center space-x-2 group relative overflow-hidden px-6 py-3 bg-gradient-to-r from-purple-600 via-purple-500 to-blue-500 rounded-full transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-105">
               <span class="relative z-10 text-sm tracking-wide text-white font-semibold">Receba uma infraestrutura personalizada <span class="font-black">GRATUITAMENTE</span></span>
               <svg class="w-5 h-5 text-white relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -158,9 +156,8 @@ export default {
 }
 
 /* ========================================
-   TORRE 3D - BRILHO SUAVE
+   TORRE 3D - DESKTOP
    ======================================== */
-
 .loader-container {
   position: absolute;
   top: 35%;
@@ -301,7 +298,6 @@ export default {
 /* ========================================
    RESPONSIVIDADE
    ======================================== */
-
 @media (max-width: 1600px) {
   .loader-container {
     right: 20%;
@@ -329,35 +325,27 @@ export default {
     height: 60px;
     width: 50px;
   }
-  
-  .side-left,
-  .side-right {
-    width: 24px;
-    height: 7px;
-    top: 18px;
-    left: 12px;
-  }
-  
-  .side-right {
-    left: -12px;
-  }
-  
-  .side-top {
-    width: 24px;
-    height: 24px;
-  }
 }
 
+/* ========================================
+   MOBILE - TORRE ACIMA DO TEXTO (AJUSTADO)
+======================================== */
 @media (max-width: 768px) {
+  section {
+    margin-left: 0 !important;
+  }
+
   .loader-container {
-    right: 8%;
-    top: 30%;
-    filter: drop-shadow(0 0 20px rgba(95, 168, 245, 0.35)) 
-            drop-shadow(0 0 40px rgba(47, 133, 224, 0.25));
+    top: 12%;
+    left: 50%;
+    right: auto;
+    transform: translate(-50%, 0);
+    filter: drop-shadow(0 0 15px rgba(95, 168, 245, 0.3)) 
+            drop-shadow(0 0 30px rgba(47, 133, 224, 0.2));
   }
   
   .loader {
-    scale: 2.8;
+    scale: 2.2;
     height: 50px;
     width: 45px;
   }
@@ -367,6 +355,9 @@ export default {
     width: 20px;
     height: 6px;
     top: 16px;
+  }
+  
+  .side-left {
     left: 10px;
   }
   
@@ -378,37 +369,79 @@ export default {
     width: 20px;
     height: 20px;
   }
+
+  /* Adiciona espaço extra no topo do conteúdo */
+  .container {
+    padding-top: 6rem !important;
+  }
 }
 
 @media (max-width: 480px) {
   .loader-container {
-    right: 5%;
-    top: 28%;
-    filter: drop-shadow(0 0 15px rgba(95, 168, 245, 0.3)) 
-            drop-shadow(0 0 30px rgba(47, 133, 224, 0.2));
+    top: 10%;
   }
   
   .loader {
     scale: 2;
-    height: 40px;
-    width: 35px;
+    height: 45px;
+    width: 40px;
   }
   
   .side-left,
   .side-right {
-    width: 16px;
+    width: 18px;
     height: 5px;
     top: 14px;
-    left: 8px;
+  }
+  
+  .side-left {
+    left: 9px;
   }
   
   .side-right {
-    left: -8px;
+    left: -9px;
   }
   
   .side-top {
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .container {
+    padding-top: 5rem !important;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .loader-container {
+    top: 15%;
+  }
+  
+  .loader {
+    scale: 2.5;
+    height: 45px;
+    width: 40px;
+  }
+  
+  .side-left,
+  .side-right {
+    width: 18px;
+    height: 5px;
+    top: 14px;
+  }
+  
+  .side-left {
+    left: 9px;
+  }
+  
+  .side-right {
+    left: -9px;
+  }
+  
+  .side-top {
+    width: 18px;
+    height: 18px;
   }
 }
 </style>
