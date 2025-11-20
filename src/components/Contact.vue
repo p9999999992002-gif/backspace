@@ -375,7 +375,7 @@ input[type="radio"]:focus {
   outline-offset: 2px;
 }
 
-/* Remove margin-left no mobile */
+/* Remove margin-left no mobile + deixa o card mais largo */
 @media (max-width: 768px) {
   section {
     margin-left: 0 !important;
@@ -383,7 +383,14 @@ input[type="radio"]:focus {
 
   .contact-card {
     border-radius: 1.25rem;
-    padding: 1.1rem 1.2rem 1.4rem;
+    padding: 1.2rem 1.4rem 1.6rem;
+    max-width: 100%;
+  }
+
+  /* inputs mais cheios na tela */
+  .form-input {
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
   }
 }
 

@@ -918,3 +918,15 @@ footer,
     opacity: 1 !important;
   }
 }
+
+/* MOBILE: cards mais "gordinhos" ocupando melhor a largura */
+@media (max-width: 768px) {
+  .project-card,
+  .service-card {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
