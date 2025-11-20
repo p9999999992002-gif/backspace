@@ -42,7 +42,7 @@
         <div class="text-center md:text-left">
           <h4 class="text-white font-bold mb-4 text-sm tracking-widest">CONTATO</h4>
           <ul class="space-y-2 text-sm text-gray-400">
-            <li>contact@backspace.com</li>
+            <li>contato@backspace.dev.com</li>
             <li>São Paulo, SP - Brasil</li>
           </ul>
         </div>

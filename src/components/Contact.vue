@@ -29,7 +29,7 @@
               </div>
               <div>
                 <h4 class="text-white text-sm md:text-base font-semibold mb-1">Email</h4>
-                <p class="text-gray-400 text-sm md:text-base">contact@backspace.com</p>
+                <p class="text-gray-400 text-sm md:text-base">contato@backspace.dev.com</p>
               </div>
             </div>
 
