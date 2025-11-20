@@ -1,5 +1,5 @@
 <template>
-  <section id="services" class="relative py-16 md:py-32 bg-black overflow-hidden ml-20 md:ml-24">
+  <section id="services" class="relative py-16 md:py-32 bg-black overflow-hidden">
     <div class="absolute inset-0 opacity-10">
       <div class="grid-pattern"></div>
     </div>
@@ -7,27 +7,29 @@
     <div class="container mx-auto px-4 md:px-6 relative z-10">
       <!-- Section Header -->
       <div class="text-center mb-12 md:mb-20 fade-in-up">
-        <div class="flex items-center space-x-4 mb-8 justify-center">
+        <div class="flex items-center space-x-4 mb-6 md:mb-8 justify-center">
           <div class="w-12 h-px bg-purple-500"></div>
           <p class="text-xs md:text-sm text-purple-400 tracking-[0.3em] uppercase">Nossos Serviços</p>
           <div class="w-12 h-px bg-purple-500"></div>
         </div>
-        <h2 class="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight max-w-3xl mx-auto px-4">
+        <h2 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight max-w-3xl mx-auto px-2 md:px-4">
           Soluções abrangentes para o crescimento do seu negócio
         </h2>
       </div>
 
       <!-- Services Grid -->
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8 max-w-6xl mx-auto">
         <!-- Service Card 1 -->
         <div class="service-card group fade-in-up">
           <div class="service-icon">
-            <svg class="w-10 h-10 md:w-12 md:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-8 h-8 md:w-12 md:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
             </svg>
           </div>
-          <h4 class="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Soluções de Automação</h4>
-          <p class="text-sm md:text-base text-gray-400 leading-relaxed mb-4 md:mb-6">
+          <h4 class="service-title text-lg md:text-2xl font-bold text-white mb-2 md:mb-3">
+            Soluções de Automação
+          </h4>
+          <p class="service-text text-sm md:text-base text-gray-400 leading-relaxed">
             Simplifique seus processos de negócios com automação inteligente que economiza tempo e reduz custos operacionais.
           </p>
         </div>
@@ -35,12 +37,14 @@
         <!-- Service Card 2 -->
         <div class="service-card group fade-in-up" style="animation-delay: 0.1s">
           <div class="service-icon">
-            <svg class="w-10 h-10 md:w-12 md:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-8 h-8 md:w-12 md:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
             </svg>
           </div>
-          <h4 class="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Infraestrutura em Nuvem</h4>
-          <p class="text-sm md:text-base text-gray-400 leading-relaxed mb-4 md:mb-6">
+          <h4 class="service-title text-lg md:text-2xl font-bold text-white mb-2 md:mb-3">
+            Infraestrutura em Nuvem
+          </h4>
+          <p class="service-text text-sm md:text-base text-gray-400 leading-relaxed">
             Construa soluções em nuvem escaláveis e seguras que crescem com as necessidades do seu negócio e garantem alta disponibilidade.
           </p>
         </div>
@@ -48,24 +52,27 @@
         <!-- Service Card 3 -->
         <div class="service-card group sm:col-span-2 lg:col-span-1 fade-in-up" style="animation-delay: 0.2s">
           <div class="service-icon">
-            <svg class="w-10 h-10 md:w-12 md:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-8 h-8 md:w-12 md:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
             </svg>
           </div>
-          <h4 class="text-xl md:text-2xl font-bold text-white mb-3 md:mb-4">Transformação Digital</h4>
-          <p class="text-sm md:text-base text-gray-400 leading-relaxed mb-4 md:mb-6">
+          <h4 class="service-title text-lg md:text-2xl font-bold text-white mb-2 md:mb-3">
+            Transformação Digital
+          </h4>
+          <p class="service-text text-sm md:text-base text-gray-400 leading-relaxed">
             Transforme seu negócio com soluções digitais de ponta, análise de dados e estratégias inovadoras.
           </p>
         </div>
       </div>
 
-      <!-- CTA Section -->
-      <div class="mt-12 md:mt-20 text-center fade-in-up">
-      </div>
+      <!-- CTA Section (vazia por enquanto) -->
+      <div class="mt-10 md:mt-20 text-center fade-in-up"></div>
     </div>
 
     <!-- Page Number -->
-    <div class="absolute bottom-6 md:bottom-10 right-6 md:right-10 text-6xl md:text-8xl font-black text-white/5 tracking-tighter pointer-events-none">03</div>
+    <div class="absolute bottom-6 md:bottom-10 right-6 md:right-10 text-6xl md:text-8xl font-black text-white/5 tracking-tighter pointer-events-none">
+      03
+    </div>
   </section>
 </template>
 
@@ -91,8 +98,9 @@ export default {
   }
 }
 
+/* Cards base */
 .service-card {
-  @apply relative p-6 md:p-8 bg-gradient-to-br from-white/5 to-transparent border border-white/10 rounded-2xl md:rounded-3xl backdrop-blur-sm transition-all duration-500 hover:border-purple-500/50 hover:bg-white/10 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/10;
+  @apply relative p-5 md:p-8 bg-gradient-to-br from-white/5 to-transparent border border-white/10 rounded-2xl md:rounded-3xl backdrop-blur-sm transition-all duration-500 hover:border-purple-500/50 hover:bg-white/10 hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/10;
 }
 
 .service-card::before {
@@ -119,8 +127,33 @@ export default {
   opacity: 1;
 }
 
+/* Ícone do card */
 .service-icon {
-  @apply w-16 h-16 md:w-20 md:h-20 rounded-xl md:rounded-2xl bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-white mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300;
+  @apply w-14 h-14 md:w-20 md:h-20 rounded-xl md:rounded-2xl bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-white mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300;
   box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3);
+}
+
+/* MOBILE: ajustar respiro e tipografia */
+@media (max-width: 768px) {
+  .service-card {
+    border-radius: 1.25rem;
+    padding: 1.1rem 1.2rem 1.3rem;
+  }
+
+  .service-icon {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .service-title {
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .service-text {
+    font-size: 0.9rem;
+    line-height: 1.55;
+  }
 }
 </style>

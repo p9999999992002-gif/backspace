@@ -1,5 +1,5 @@
 <template>
-  <section id="projects" class="relative py-20 md:py-32 bg-black overflow-hidden ml-20 md:ml-24">
+  <section id="projects" class="relative py-20 md:py-32 bg-black overflow-hidden">
     <div class="absolute inset-0">
       <div class="stars"></div>
     </div>
@@ -13,29 +13,29 @@
       </div>
 
       <!-- Title - CENTRALIZADO -->
-      <h2 class="text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-16 text-center fade-in-up">
+      <h2 class="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight mb-10 md:mb-16 text-center fade-in-up">
         Projetos em Destaque
       </h2>
 
       <!-- Projects Grid CENTRALIZADO -->
-      <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-6xl mx-auto">
         <!-- Project Card 1 -->
         <div class="project-card group fade-in-up">
           <div class="project-image">
             <div class="image-placeholder">
-              <svg class="w-16 h-16 text-purple-500/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-14 h-14 md:w-16 md:h-16 text-purple-500/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
               </svg>
             </div>
           </div>
           <div class="project-content">
-            <div class="flex items-center space-x-2 mb-3">
-              <span class="text-xs text-purple-400 tracking-widest">AUTOMAÇÃO</span>
+            <div class="flex items-center space-x-2 mb-2 md:mb-3">
+              <span class="text-[11px] md:text-xs text-purple-400 tracking-[0.18em] uppercase">AUTOMAÇÃO</span>
               <span class="text-gray-600">•</span>
-              <span class="text-xs text-gray-500">2024</span>
+              <span class="text-[11px] md:text-xs text-gray-500">2024</span>
             </div>
-            <h3 class="text-2xl font-bold text-white mb-3">Automação de Sistema Jurídico</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-4">
+            <h3 class="text-xl md:text-2xl font-bold text-white mb-2 md:mb-3">Automação de Sistema Jurídico</h3>
+            <p class="text-gray-400 text-sm md:text-base leading-relaxed">
               Processamento automatizado de documentos e preenchimento de formulários para sistemas jurídicos brasileiros, reduzindo o tempo de processamento em 80%.
             </p>
           </div>
@@ -45,19 +45,19 @@
         <div class="project-card group fade-in-up" style="animation-delay: 0.1s">
           <div class="project-image">
             <div class="image-placeholder">
-              <svg class="w-16 h-16 text-blue-500/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-14 h-14 md:w-16 md:h-16 text-blue-500/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
               </svg>
             </div>
           </div>
           <div class="project-content">
-            <div class="flex items-center space-x-2 mb-3">
-              <span class="text-xs text-blue-400 tracking-widest">NUVEM</span>
+            <div class="flex items-center space-x-2 mb-2 md:mb-3">
+              <span class="text-[11px] md:text-xs text-blue-400 tracking-[0.18em] uppercase">NUVEM</span>
               <span class="text-gray-600">•</span>
-              <span class="text-xs text-gray-500">2024</span>
+              <span class="text-[11px] md:text-xs text-gray-500">2024</span>
             </div>
-            <h3 class="text-2xl font-bold text-white mb-3">Configuração de Infraestrutura em Nuvem</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-4">
+            <h3 class="text-xl md:text-2xl font-bold text-white mb-2 md:mb-3">Configuração de Infraestrutura em Nuvem</h3>
+            <p class="text-gray-400 text-sm md:text-base leading-relaxed">
               Implementação de arquitetura em nuvem escalável com alta disponibilidade e backups automatizados para cliente corporativo.
             </p>
           </div>
@@ -67,19 +67,19 @@
         <div class="project-card group fade-in-up" style="animation-delay: 0.2s">
           <div class="project-image">
             <div class="image-placeholder">
-              <svg class="w-16 h-16 text-pink-500/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-14 h-14 md:w-16 md:h-16 text-pink-500/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
               </svg>
             </div>
           </div>
           <div class="project-content">
-            <div class="flex items-center space-x-2 mb-3">
-              <span class="text-xs text-pink-400 tracking-widest">DASHBOARD</span>
+            <div class="flex items-center space-x-2 mb-2 md:mb-3">
+              <span class="text-[11px] md:text-xs text-pink-400 tracking-[0.18em] uppercase">DASHBOARD</span>
               <span class="text-gray-600">•</span>
-              <span class="text-xs text-gray-500">2024</span>
+              <span class="text-[11px] md:text-xs text-gray-500">2024</span>
             </div>
-            <h3 class="text-2xl font-bold text-white mb-3">Gestão de Ativos de TI</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-4">
+            <h3 class="text-xl md:text-2xl font-bold text-white mb-2 md:mb-3">Gestão de Ativos de TI</h3>
+            <p class="text-gray-400 text-sm md:text-base leading-relaxed">
               Dashboard abrangente para rastreamento de notebooks, impressoras e equipamentos de TI com gerenciamento de inventário em tempo real.
             </p>
           </div>
@@ -89,27 +89,30 @@
         <div class="project-card group fade-in-up" style="animation-delay: 0.3s">
           <div class="project-image">
             <div class="image-placeholder">
-              <svg class="w-16 h-16 text-cyan-500/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-14 h-14 md:w-16 md:h-16 text-cyan-500/20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M13 10V3L4 14h7v7l9-11h-7z"/>
               </svg>
             </div>
           </div>
           <div class="project-content">
-            <div class="flex items-center space-x-2 mb-3">
-              <span class="text-xs text-cyan-400 tracking-widest">WEB SCRAPING</span>
+            <div class="flex items-center space-x-2 mb-2 md:mb-3">
+              <span class="text-[11px] md:text-xs text-cyan-400 tracking-[0.18em] uppercase">WEB SCRAPING</span>
               <span class="text-gray-600">•</span>
-              <span class="text-xs text-gray-500">2024</span>
+              <span class="text-[11px] md:text-xs text-gray-500">2024</span>
             </div>
-            <h3 class="text-2xl font-bold text-white mb-3">Plataforma de Extração de Dados</h3>
-            <p class="text-gray-400 text-sm leading-relaxed mb-4">
+            <h3 class="text-xl md:text-2xl font-bold text-white mb-2 md:mb-3">Plataforma de Extração de Dados</h3>
+            <p class="text-gray-400 text-sm md:text-base leading-relaxed">
               Solução avançada de web scraping usando Playwright para coleta e processamento automatizado de dados em escala.
             </p>
           </div>
         </div>
       </div>
     </div>
+
     <!-- Page Number -->
-    <div class="absolute bottom-12 right-12 text-6xl md:text-8xl font-black text-white/5 tracking-tighter pointer-events-none">02</div>
+    <div class="absolute bottom-12 right-12 text-6xl md:text-8xl font-black text-white/5 tracking-tighter pointer-events-none">
+      02
+    </div>
   </section>
 </template>
 
@@ -133,12 +136,13 @@ export default {
   to { transform: translateY(-2000px); }
 }
 
+/* Cards mais limpos e responsivos */
 .project-card {
-  @apply relative bg-gradient-to-br from-white/5 to-transparent border border-white/10 rounded-2xl overflow-hidden backdrop-blur-sm transition-all duration-500 hover:border-purple-500/30 hover:transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/10;
+  @apply relative bg-gradient-to-br from-white/5 to-transparent border border-white/10 rounded-2xl overflow-hidden backdrop-blur-sm transition-all duration-500 hover:border-purple-500/30 hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/10;
 }
 
 .project-image {
-  @apply relative h-64 bg-gradient-to-br from-purple-900/20 to-blue-900/20 overflow-hidden;
+  @apply relative h-40 md:h-64 bg-gradient-to-br from-purple-900/20 to-blue-900/20 overflow-hidden;
 }
 
 .image-placeholder {
@@ -146,6 +150,17 @@ export default {
 }
 
 .project-content {
-  @apply p-6;
+  @apply p-5 md:p-6;
+}
+
+/* MOBILE: mais espaço e 1 coluna já está definido no template */
+@media (max-width: 768px) {
+  .project-card {
+    border-radius: 1.25rem;
+  }
+
+  .project-content {
+    padding: 1rem 1.1rem 1.25rem;
+  }
 }
 </style>
