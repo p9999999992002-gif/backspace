@@ -32,7 +32,7 @@
             <div class="flex items-center space-x-2 mb-2 md:mb-3">
               <span class="text-[11px] md:text-xs text-purple-400 tracking-[0.18em] uppercase">AUTOMAÇÃO</span>
               <span class="text-gray-600">•</span>
-              <span class="text-[11px] md:text-xs text-gray-500">2024</span>
+              <span class="text-[11px] md:text-xs text-gray-500">2025</span>
             </div>
             <h3 class="text-xl md:text-2xl font-bold text-white mb-2 md:mb-3">Automação de Sistema Jurídico</h3>
             <p class="text-gray-400 text-sm md:text-base leading-relaxed">
@@ -54,7 +54,7 @@
             <div class="flex items-center space-x-2 mb-2 md:mb-3">
               <span class="text-[11px] md:text-xs text-blue-400 tracking-[0.18em] uppercase">NUVEM</span>
               <span class="text-gray-600">•</span>
-              <span class="text-[11px] md:text-xs text-gray-500">2024</span>
+              <span class="text-[11px] md:text-xs text-gray-500">2025</span>
             </div>
             <h3 class="text-xl md:text-2xl font-bold text-white mb-2 md:mb-3">Configuração de Infraestrutura em Nuvem</h3>
             <p class="text-gray-400 text-sm md:text-base leading-relaxed">
@@ -76,7 +76,7 @@
             <div class="flex items-center space-x-2 mb-2 md:mb-3">
               <span class="text-[11px] md:text-xs text-pink-400 tracking-[0.18em] uppercase">DASHBOARD</span>
               <span class="text-gray-600">•</span>
-              <span class="text-[11px] md:text-xs text-gray-500">2024</span>
+              <span class="text-[11px] md:text-xs text-gray-500">2025</span>
             </div>
             <h3 class="text-xl md:text-2xl font-bold text-white mb-2 md:mb-3">Gestão de Ativos de TI</h3>
             <p class="text-gray-400 text-sm md:text-base leading-relaxed">
@@ -98,7 +98,7 @@
             <div class="flex items-center space-x-2 mb-2 md:mb-3">
               <span class="text-[11px] md:text-xs text-cyan-400 tracking-[0.18em] uppercase">WEB SCRAPING</span>
               <span class="text-gray-600">•</span>
-              <span class="text-[11px] md:text-xs text-gray-500">2024</span>
+              <span class="text-[11px] md:text-xs text-gray-500">2025</span>
             </div>
             <h3 class="text-xl md:text-2xl font-bold text-white mb-2 md:mb-3">Plataforma de Extração de Dados</h3>
             <p class="text-gray-400 text-sm md:text-base leading-relaxed">
