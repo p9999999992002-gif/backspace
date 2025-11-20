@@ -22,7 +22,7 @@
         <!-- Service Card 1 -->
         <div class="service-card group fade-in-up">
           <div class="service-icon">
-            <svg class="w-8 h-8 md:w-12 md:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/>
             </svg>
           </div>
@@ -37,7 +37,7 @@
         <!-- Service Card 2 -->
         <div class="service-card group fade-in-up" style="animation-delay: 0.1s">
           <div class="service-icon">
-            <svg class="w-8 h-8 md:w-12 md:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
             </svg>
           </div>
@@ -52,7 +52,7 @@
         <!-- Service Card 3 -->
         <div class="service-card group sm:col-span-2 lg:col-span-1 fade-in-up" style="animation-delay: 0.2s">
           <div class="service-icon">
-            <svg class="w-8 h-8 md:w-12 md:h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>
             </svg>
           </div>
@@ -127,33 +127,38 @@ export default {
   opacity: 1;
 }
 
-/* Ícone do card */
+/* Ícone do card - ROXO e centralizado */
+/* Ícone do card - ROXO e CENTRALIZADO */
 .service-icon {
-  @apply w-14 h-14 md:w-20 md:h-20 rounded-xl md:rounded-2xl bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-white mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300;
-  box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3);
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, #9333ea 0%, #7c3aed 100%);
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: white;
+  margin-bottom: 1rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 24px rgba(147, 51, 234, 0.4);
 }
 
-/* MOBILE: ajustar respiro e tipografia */
-@media (max-width: 768px) {
-  .service-card {
-    border-radius: 1.25rem;
-    padding: 1.1rem 1.2rem 1.3rem;
-  }
+.service-icon svg {
+  margin: 0 !important;
+  padding: 0 !important;
+}
 
+.service-card:hover .service-icon {
+  transform: scale(1.1);
+  box-shadow: 0 12px 32px rgba(147, 51, 234, 0.5);
+}
+
+@media (min-width: 768px) {
   .service-icon {
-    width: 3rem;
-    height: 3rem;
-    margin-bottom: 0.9rem;
-  }
-
-  .service-title {
-    font-size: 1.05rem;
-    margin-bottom: 0.4rem;
-  }
-
-  .service-text {
-    font-size: 0.9rem;
-    line-height: 1.55;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
   }
 }
 </style>

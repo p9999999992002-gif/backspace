@@ -357,8 +357,8 @@ select.form-input option {
   }
 
   .contact-card {
-    border-radius: 1.4rem;
-    padding: 1.2rem 1.2rem 1.6rem;
+    border-radius: 1rem;
+    padding: 1.2rem 1.1rem 1.6rem;
     width: 100%;
     max-width: 100%;
     margin-left: 0;

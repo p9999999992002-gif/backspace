@@ -153,26 +153,27 @@ export default {
   @apply p-5 md:p-6;
 }
 
-/* MOBILE – mais alto e “gordinho”, sem estourar a tela */
+/* MOBILE – largura 90% da tela, centralizado e mais "gordinho" */
 @media (max-width: 768px) {
   .project-card {
     width: 100%;
     max-width: 100%;
     margin-left: 0;
     margin-right: 0;
-    border-radius: 1.5rem;
+    border-radius: 1rem;          /* raio menor para parecer mais encostado */
   }
 
   .project-image {
-    height: 11rem;              /* imagem mais alta */
+    height: 11rem;
   }
 
   .project-content {
-    padding: 1.4rem 1.4rem 1.6rem;  /* mais padding vertical */
+    padding: 1.2rem 1.1rem 1.4rem;
   }
+}
 
   .project-content h3 {
-    font-size: 1.3rem;          /* título um pouco maior */
+    font-size: 1.3rem;
     line-height: 1.25;
     margin-bottom: 0.7rem;
   }
@@ -181,5 +182,5 @@ export default {
     font-size: 0.95rem;
     line-height: 1.7;
   }
-}
+
 </style>

@@ -42,7 +42,7 @@
       <div class="max-w-5xl fade-in-up">
         <div class="content-spacing">
           <!-- Subtitle -->
-          <div class="flex items-center space-x-4">
+          <div class="flex items-center space-x-4 subtitle-line">
             <div class="w-12 h-px bg-purple-500"></div>
             <p class="text-xs md:text-sm text-gray-400 tracking-[0.3em] uppercase">Backspace</p>
           </div>
@@ -58,6 +58,13 @@
           <p class="description-mobile text-gray-400 text-base md:text-lg leading-relaxed max-w-3xl">
             Crescer exige mais que tecnologia: exige estrutura. A <span class="text-white font-semibold">Backspace</span> projeta, de graça, a arquitetura em nuvem perfeita para o seu negócio automatizada, escalável e pronta para o futuro
           </p>
+
+          <!-- Spinner Animado - APENAS MOBILE -->
+          <div class="spinner-container">
+            <div class="spinner">
+              <div class="spinner1"></div>
+            </div>
+          </div>
 
           <!-- CTA Buttons -->
           <div class="buttons-mobile pt-4 flex flex-col sm:flex-row gap-4">
@@ -153,6 +160,44 @@ export default {
 
 .animate-scroll {
   animation: scroll 2s ease-in-out infinite;
+}
+
+/* ========================================
+   SPINNER ANIMADO
+   ======================================== */
+.spinner-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.spinner {
+  background-image: linear-gradient(rgb(186, 66, 255) 35%, rgb(0, 225, 255));
+  width: 80px;
+  height: 80px;
+  animation: spinning82341 1.7s linear infinite;
+  text-align: center;
+  border-radius: 50px;
+  filter: blur(1px);
+  box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner1 {
+  background-color: rgb(36, 36, 36);
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  filter: blur(10px);
+}
+
+@keyframes spinning82341 {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* ========================================
@@ -328,7 +373,7 @@ export default {
 }
 
 /* ========================================
-   MOBILE - TEXTO MAIS EM CIMA E ESPAÇADO
+   MOBILE - CONTEÚDO MAIS ALTO E BEM DISTRIBUÍDO
    ======================================== */
 @media (max-width: 768px) {
   /* Esconde a torre 3D */
@@ -336,71 +381,90 @@ export default {
     display: none !important;
   }
 
-  /* Section ocupa altura total com conteúdo mais alto */
+  /* MOSTRA o spinner no mobile */
+  .spinner-container {
+    display: flex !important;
+  }
+
+  /* Section com conteúdo mais alto */
   .hero-section {
     display: flex;
     align-items: flex-start;
     justify-content: center;
     min-height: 100vh;
-    padding-top: 4rem !important;
-    padding-bottom: 2.5rem !important;
+    padding-top: 6.5rem !important;
+    padding-bottom: 3rem !important;
     margin: 0 !important;
   }
 
-  /* Content wrapper */
+  /* Content wrapper centralizado */
   .content-wrapper {
     display: flex;
     align-items: flex-start;
     justify-content: center;
     width: 100%;
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     margin: 0 auto;
+    text-align: center;
   }
 
   /* Espaçamento vertical entre elementos */
   .content-spacing {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1.5rem;
+    width: 100%;
+    padding: 0 1.25rem;
   }
 
-  /* Título mais compacto e em cima */
+  /* Linha do subtitle centralizada */
+  .subtitle-line {
+    justify-content: center;
+  }
+
+  /* Título centralizado e maior */
   .title-mobile {
-    font-size: 2.1rem !important;
-    line-height: 1.15 !important;
+    font-size: 2.2rem !important;
+    line-height: 1.18 !important;
     margin: 0 !important;
+    text-align: center;
   }
 
-  /* Descrição com boa leitura */
+  /* Descrição centralizada */
   .description-mobile {
     color: #d1d5db !important;
-    font-size: 0.95rem !important;
-    line-height: 1.6 !important;
+    font-size: 0.98rem !important;
+    line-height: 1.65 !important;
+    text-align: center;
+    max-width: 100%;
   }
 
-  /* Botões em coluna, mais espaçados */
+  /* Botões centralizados e largura uniforme */
   .buttons-mobile {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1.1rem;
     width: 100%;
-    margin-top: 0.75rem;
+    margin-top: 0.5rem;
   }
 
   .bubble-button,
   .bubble-button-gradient {
-    width: 92%;
-    align-self: center;
-    padding: 0.85rem 1.4rem !important;
-    font-size: 0.88rem !important;
+    width: 100%;
+    max-width: 100%;
+    padding: 0.95rem 1.4rem !important;
+    font-size: 0.9rem !important;
     justify-content: center;
+    text-align: center;
     border-radius: 9999px;
   }
 
   .bubble-button-gradient span {
     text-align: center;
-    line-height: 1.4;
+    line-height: 1.45;
   }
 
   /* Esconde número da página no mobile */
@@ -411,27 +475,36 @@ export default {
 
 @media (max-width: 480px) {
   .hero-section {
-    padding-top: 3.5rem !important;
+    padding-top: 6rem !important;
   }
 
-  .content-wrapper {
-    padding-left: 1.25rem !important;
-    padding-right: 1.25rem !important;
+  .content-spacing {
+    padding: 0 1rem;
+    gap: 1.4rem;
   }
 
   .title-mobile {
-    font-size: 1.9rem !important;
+    font-size: 2rem !important;
   }
 
   .description-mobile {
-    font-size: 0.88rem !important;
+    font-size: 0.92rem !important;
+  }
+
+  .spinner {
+    width: 70px;
+    height: 70px;
+  }
+
+  .spinner1 {
+    width: 60px;
+    height: 60px;
   }
 
   .bubble-button,
   .bubble-button-gradient {
-    width: 94%;
-    padding: 0.8rem 1.2rem !important;
-    font-size: 0.82rem !important;
+    padding: 0.9rem 1.3rem !important;
+    font-size: 0.87rem !important;
   }
 }
 </style>

@@ -830,7 +830,7 @@ footer,
 }
 
 /* ========================================
-   MOBILE - REMOVE SIDEBAR E BLOCOS 3D
+   MOBILE - CARDS COLADOS NAS BORDAS
 ======================================== */
 @media (max-width: 768px) {
   /* Remove sidebar */
@@ -856,11 +856,11 @@ footer,
     width: 100vw !important;
   }
   
-  /* Todas as sections ocupam largura total */
+  /* Todas as sections com padding mínimo */
   section {
     margin-left: 0 !important;
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
+    padding-left: 0.4rem !important;
+    padding-right: 0.4rem !important;
     width: 100% !important;
     max-width: 100vw !important;
   }
@@ -873,14 +873,14 @@ footer,
     margin: 0 !important;
   }
   
-  /* Containers */
+  /* Containers SEM padding lateral */
   .container,
   .max-w-7xl,
   .mx-auto {
     margin-left: 0 !important;
     margin-right: 0 !important;
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     max-width: 100% !important;
   }
 
