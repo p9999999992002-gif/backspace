@@ -156,11 +156,12 @@ export default {
 /* MOBILE: mais espaço e 1 coluna já está definido no template */
 @media (max-width: 768px) {
   .project-card {
-    border-radius: 1.25rem;
-  }
-
-  .project-content {
-    padding: 1rem 1.1rem 1.25rem;
+    width: 100%;
+    max-width: none;
+    margin-left: -0.75rem;   /* empurra um pouco para fora */
+    margin-right: -0.75rem;
+    border-radius: 1.5rem;
   }
 }
+
 </style>

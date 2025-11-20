@@ -382,17 +382,20 @@ input[type="radio"]:focus {
   }
 
   .contact-card {
-    border-radius: 1.25rem;
+    border-radius: 1.4rem;
     padding: 1.2rem 1.4rem 1.6rem;
-    max-width: 100%;
+    width: 100%;
+    max-width: none;
+    margin-left: -0.75rem;   /* mesmo truque dos cards */
+    margin-right: -0.75rem;
   }
 
-  /* inputs mais cheios na tela */
   .form-input {
-    padding-left: 1.1rem;
-    padding-right: 1.1rem;
+    padding-left: 1.15rem;
+    padding-right: 1.15rem;
   }
 }
+
 
 /* Estilos Premium do SweetAlert2 */
 :global(.premium-popup) {
