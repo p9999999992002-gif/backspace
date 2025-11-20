@@ -136,7 +136,7 @@ export default {
   to { transform: translateY(-2000px); }
 }
 
-/* Cards mais limpos e responsivos */
+/* Cards base */
 .project-card {
   @apply relative bg-gradient-to-br from-white/5 to-transparent border border-white/10 rounded-2xl overflow-hidden backdrop-blur-sm transition-all duration-500 hover:border-purple-500/30 hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/10;
 }
@@ -153,15 +153,33 @@ export default {
   @apply p-5 md:p-6;
 }
 
-/* MOBILE: mais espaço e 1 coluna já está definido no template */
+/* MOBILE – mais alto e “gordinho”, sem estourar a tela */
 @media (max-width: 768px) {
   .project-card {
     width: 100%;
-    max-width: none;
-    margin-left: -0.75rem;   /* empurra um pouco para fora */
-    margin-right: -0.75rem;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
     border-radius: 1.5rem;
   }
-}
 
+  .project-image {
+    height: 11rem;              /* imagem mais alta */
+  }
+
+  .project-content {
+    padding: 1.4rem 1.4rem 1.6rem;  /* mais padding vertical */
+  }
+
+  .project-content h3 {
+    font-size: 1.3rem;          /* título um pouco maior */
+    line-height: 1.25;
+    margin-bottom: 0.7rem;
+  }
+
+  .project-content p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+}
 </style>

@@ -1,5 +1,6 @@
 <template>
   <section id="contact" class="relative py-16 md:py-32 bg-gradient-to-br from-black via-purple-950/10 to-black overflow-hidden md:ml-24">
+    <!-- Glows -->
     <div class="absolute top-10 md:top-20 right-10 md:right-20 w-32 h-32 md:w-64 md:h-64 bg-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
     <div class="absolute bottom-10 md:bottom-20 left-10 md:left-20 w-32 h-32 md:w-64 md:h-64 bg-pink-600/20 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
 
@@ -16,7 +17,7 @@
               Receba um design de infraestrutura personalizado grátis!
             </h2>
             <p class="text-sm md:text-lg text-gray-400 leading-relaxed text-center md:text-left">
-              Pronto para transformar seu negócio? Entre em contato hoje e vamos discutir como podemos ajudá-lo a alcançar seus objetivos.
+              Pronto para transformar seu negócio? Envie seus dados e nossa equipe retorna com uma proposta sob medida.
             </p>
           </div>
 
@@ -29,7 +30,7 @@
               </div>
               <div>
                 <h4 class="text-white text-sm md:text-base font-semibold mb-1">Email</h4>
-                <p class="text-gray-400 text-sm md:text-base">contato@backspace.dev.com</p>
+                <p class="text-gray-400 text-sm md:text-base">contact@backspace.com</p>
               </div>
             </div>
 
@@ -60,77 +61,85 @@
           </div>
         </div>
 
-        <!-- Formulário -->
+        <!-- Formulário remodelado -->
         <div class="contact-card bg-white/5 border border-white/10 rounded-2xl md:rounded-3xl p-5 md:p-8 backdrop-blur-xl fade-in-up hover:border-purple-500/30 transition-all duration-300">
-          <form @submit.prevent="handleSubmit" class="space-y-4 md:space-y-5">
-            <div>
-              <label class="block text-xs md:text-sm font-medium text-white mb-1.5 md:mb-2">Nome completo</label>
-              <input v-model="form.name" type="text" required class="form-input" placeholder="Insira o nome do responsável"/>
+          <form @submit.prevent="handleSubmit" class="space-y-5 md:space-y-6">
+            <!-- Linha 1: nome + email (stack no mobile, lado a lado no desktop) -->
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label class="field-label">Nome completo</label>
+                <input v-model="form.name" type="text" required class="form-input" placeholder="Nome do responsável"/>
+              </div>
+              <div>
+                <label class="field-label">Email</label>
+                <input v-model="form.email" type="email" required class="form-input" placeholder="seu@email.com"/>
+              </div>
             </div>
 
-            <div>
-              <label class="block text-xs md:text-sm font-medium text-white mb-1.5 md:mb-2">Endereço de Email</label>
-              <input v-model="form.email" type="email" required class="form-input" placeholder="Insira seu e-mail"/>
+            <!-- Linha 2: celular + empresa -->
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label class="field-label">Celular</label>
+                <input v-model="form.phone" type="tel" required class="form-input" placeholder="(11) 90000-0000"/>
+              </div>
+              <div>
+                <label class="field-label">Empresa</label>
+                <input v-model="form.company" type="text" required class="form-input" placeholder="Nome da empresa"/>
+              </div>
             </div>
 
-            <div>
-              <label class="block text-xs md:text-sm font-medium text-white mb-1.5 md:mb-2">Celular</label>
-              <input v-model="form.phone" type="tel" required class="form-input" placeholder="Insira seu número de celular"/>
+            <!-- Linha 3: nicho + funcionários -->
+            <div class="grid md:grid-cols-2 gap-4">
+              <div>
+                <label class="field-label">Nicho</label>
+                <select v-model="form.niche" required class="form-input">
+                  <option value="" disabled selected>Selecione</option>
+                  <option value="tecnologia">Tecnologia</option>
+                  <option value="saude">Saúde</option>
+                  <option value="educacao">Educação</option>
+                  <option value="financeiro">Financeiro</option>
+                  <option value="varejo">Varejo</option>
+                  <option value="servicos">Serviços</option>
+                  <option value="industria">Indústria</option>
+                  <option value="outro">Outro</option>
+                </select>
+              </div>
+              <div>
+                <label class="field-label">Nº de funcionários</label>
+                <select v-model="form.employees" required class="form-input">
+                  <option value="" disabled selected>Selecionar</option>
+                  <option value="1-10">1-10</option>
+                  <option value="11-50">11-50</option>
+                  <option value="51-200">51-200</option>
+                  <option value="201-500">201-500</option>
+                  <option value="500+">500+</option>
+                </select>
+              </div>
             </div>
 
+            <!-- Linha 4: processos manuais (compacto) -->
             <div>
-              <label class="block text-xs md:text-sm font-medium text-white mb-1.5 md:mb-2">Nome da empresa</label>
-              <input v-model="form.company" type="text" required class="form-input" placeholder="Escreva o nome da sua empresa"/>
-            </div>
-
-            <div>
-              <label class="block text-xs md:text-sm font-medium text-white mb-1.5 md:mb-2">Nicho</label>
-              <select v-model="form.niche" required class="form-input">
-                <option value="" disabled selected>Selecione o nicho do seu negócio</option>
-                <option value="tecnologia">Tecnologia</option>
-                <option value="saude">Saúde</option>
-                <option value="educacao">Educação</option>
-                <option value="financeiro">Financeiro</option>
-                <option value="varejo">Varejo</option>
-                <option value="servicos">Serviços</option>
-                <option value="industria">Indústria</option>
-                <option value="outro">Outro</option>
-              </select>
-            </div>
-
-            <div>
-              <label class="block text-xs md:text-sm font-medium text-white mb-1.5 md:mb-2">Quantos funcionários seu negócio tem</label>
-              <select v-model="form.employees" required class="form-input">
-                <option value="" disabled selected>Selecionar</option>
-                <option value="1-10">1-10 funcionários</option>
-                <option value="11-50">11-50 funcionários</option>
-                <option value="51-200">51-200 funcionários</option>
-                <option value="201-500">201-500 funcionários</option>
-                <option value="500+">Mais de 500 funcionários</option>
-              </select>
-            </div>
-
-            <div>
-              <label class="block text-xs md:text-sm font-medium text-white mb-2 md:mb-3">Todos os processos de trabalho hoje são manuais?</label>
-              <div class="flex flex-wrap gap-4 md:gap-6">
-                <label class="flex items-center cursor-pointer">
-                  <input type="radio" v-model="form.manualProcesses" value="nao" class="w-4 h-4 text-purple-600 bg-white/5 border-white/20 focus:ring-purple-500 focus:ring-2"/>
-                  <span class="ml-2 text-sm text-gray-300">Não</span>
+              <label class="field-label mb-2">Processos hoje são manuais?</label>
+              <div class="flex flex-wrap gap-4">
+                <label class="flex items-center cursor-pointer text-sm text-gray-300">
+                  <input type="radio" v-model="form.manualProcesses" value="nao" class="radio-input"/>
+                  <span class="ml-2">Não</span>
                 </label>
-                <label class="flex items-center cursor-pointer">
-                  <input type="radio" v-model="form.manualProcesses" value="sim" class="w-4 h-4 text-purple-600 bg-white/5 border-white/20 focus:ring-purple-500 focus:ring-2"/>
-                  <span class="ml-2 text-sm text-gray-300">Sim</span>
+                <label class="flex items-center cursor-pointer text-sm text-gray-300">
+                  <input type="radio" v-model="form.manualProcesses" value="sim" class="radio-input"/>
+                  <span class="ml-2">Sim</span>
                 </label>
-                <label class="flex items-center cursor-pointer">
-                  <input type="radio" v-model="form.manualProcesses" value="parte" class="w-4 h-4 text-purple-600 bg-white/5 border-white/20 focus:ring-purple-500 focus:ring-2"/>
-                  <span class="ml-2 text-sm text-gray-300">Parte deles</span>
+                <label class="flex items-center cursor-pointer text-sm text-gray-300">
+                  <input type="radio" v-model="form.manualProcesses" value="parte" class="radio-input"/>
+                  <span class="ml-2">Parte deles</span>
                 </label>
               </div>
             </div>
 
+            <!-- Linha 5: desafio -->
             <div>
-              <label class="block text-xs md:text-sm font-medium text-white mb-1.5 md:mb-2">Qual o principal desafio técnico hoje?</label>
-              <textarea v-model="form.challenge" rows="4" required class="form-input resize-none" placeholder="Conte-nos sobre seu negócio..."></textarea>
+              <label class="field-label mb-2">Qual o principal desafio técnico hoje?</label>
+              <textarea v-model="form.challenge" rows="4" required class="form-input resize-none" placeholder="Conte em poucas linhas o cenário atual..."></textarea>
             </div>
 
             <button
@@ -188,24 +197,13 @@ export default {
         await Swal.fire({
           icon: 'warning',
           title: '<span style="color: #f59e0b; font-size: 28px;">⚠️ Atenção!</span>',
-          html: '<p style="font-size: 17px; color: #666; line-height: 1.6;">Por favor, preencha todos os <strong>campos obrigatórios</strong> para continuar.</p>',
+          html: '<p style="font-size: 17px; color: #666; line-height: 1.6;">Preencha todos os <strong>campos obrigatórios</strong> para continuar.</p>',
           confirmButtonText: '✓ Entendi',
           confirmButtonColor: '#f59e0b',
           background: 'linear-gradient(135deg, #fff 0%, #f9fafb 100%)',
           backdrop: 'rgba(0,0,0,0.5)',
           allowOutsideClick: true,
-          allowEscapeKey: true,
-          showClass: {
-            popup: 'animate__animated animate__shakeX animate__faster'
-          },
-          hideClass: {
-            popup: 'animate__animated animate__fadeOutUp animate__faster'
-          },
-          customClass: {
-            popup: 'premium-popup',
-            title: 'premium-title',
-            confirmButton: 'premium-button'
-          }
+          allowEscapeKey: true
         });
         return;
       }
@@ -247,19 +245,7 @@ export default {
             allowOutsideClick: true,
             allowEscapeKey: true,
             timer: 6000,
-            timerProgressBar: true,
-            showClass: {
-              popup: 'animate__animated animate__bounceIn'
-            },
-            hideClass: {
-              popup: 'animate__animated animate__zoomOut animate__faster'
-            },
-            customClass: {
-              popup: 'premium-popup-success',
-              title: 'premium-title-success',
-              confirmButton: 'premium-button-success',
-              timerProgressBar: 'premium-progress-bar'
-            }
+            timerProgressBar: true
           });
 
           this.form = {
@@ -298,17 +284,7 @@ export default {
           background: '#fff',
           backdrop: 'rgba(220, 38, 38, 0.2)',
           allowOutsideClick: true,
-          allowEscapeKey: true,
-          showClass: {
-            popup: 'animate__animated animate__headShake'
-          },
-          hideClass: {
-            popup: 'animate__animated animate__fadeOut animate__faster'
-          },
-          customClass: {
-            popup: 'premium-popup-error',
-            confirmButton: 'premium-button-error'
-          }
+          allowEscapeKey: true
         });
       } finally {
         this.isSubmitting = false;
@@ -319,6 +295,10 @@ export default {
 </script>
 
 <style scoped>
+.field-label {
+  @apply block text-xs md:text-sm font-medium text-white mb-1.5;
+}
+
 .form-input {
   @apply w-full px-3 py-2.5 md:px-4 md:py-3 text-sm md:text-base bg-white/5 border border-white/10 rounded-lg md:rounded-xl text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300;
 }
@@ -329,7 +309,7 @@ export default {
 
 select.form-input {
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23a78bfa' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill'%23a78bfa' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 1rem center;
   padding-right: 2.5rem;
@@ -340,7 +320,7 @@ select.form-input option {
   color: white;
 }
 
-input[type="radio"] {
+.radio-input {
   appearance: none;
   -webkit-appearance: none;
   width: 1rem;
@@ -353,12 +333,12 @@ input[type="radio"] {
   transition: all 0.3s ease;
 }
 
-input[type="radio"]:checked {
+.radio-input:checked {
   background-color: #a855f7;
   border-color: #a855f7;
 }
 
-input[type="radio"]:checked::before {
+.radio-input:checked::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -370,12 +350,7 @@ input[type="radio"]:checked::before {
   background-color: white;
 }
 
-input[type="radio"]:focus {
-  outline: 2px solid rgba(168, 85, 247, 0.5);
-  outline-offset: 2px;
-}
-
-/* Remove margin-left no mobile + deixa o card mais largo */
+/* MOBILE – visual mais compacto e agradável */
 @media (max-width: 768px) {
   section {
     margin-left: 0 !important;
@@ -383,80 +358,21 @@ input[type="radio"]:focus {
 
   .contact-card {
     border-radius: 1.4rem;
-    padding: 1.2rem 1.4rem 1.6rem;
+    padding: 1.2rem 1.2rem 1.6rem;
     width: 100%;
-    max-width: none;
-    margin-left: -0.75rem;   /* mesmo truque dos cards */
-    margin-right: -0.75rem;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
   }
 
   .form-input {
-    padding-left: 1.15rem;
-    padding-right: 1.15rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    font-size: 0.95rem;
   }
-}
 
-
-/* Estilos Premium do SweetAlert2 */
-:global(.premium-popup) {
-  border-radius: 24px !important;
-  padding: 30px !important;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
-  border: 1px solid rgba(168, 85, 247, 0.1) !important;
-}
-
-:global(.premium-popup-success) {
-  border-radius: 28px !important;
-  padding: 35px !important;
-  box-shadow: 0 30px 60px -15px rgba(168, 85, 247, 0.4) !important;
-  border: 2px solid rgba(168, 85, 247, 0.2) !important;
-}
-
-:global(.premium-popup-error) {
-  border-radius: 24px !important;
-  padding: 30px !important;
-  box-shadow: 0 25px 50px -12px rgba(220, 38, 38, 0.3) !important;
-}
-
-:global(.premium-button) {
-  border-radius: 12px !important;
-  padding: 14px 32px !important;
-  font-weight: 700 !important;
-  font-size: 16px !important;
-  transition: all 0.3s ease !important;
-  box-shadow: 0 10px 20px -10px rgba(245, 158, 11, 0.5) !important;
-}
-
-:global(.premium-button:hover) {
-  transform: translateY(-2px) !important;
-  box-shadow: 0 15px 30px -10px rgba(245, 158, 11, 0.6) !important;
-}
-
-:global(.premium-button-success) {
-  border-radius: 14px !important;
-  padding: 16px 40px !important;
-  font-weight: 800 !important;
-  font-size: 17px !important;
-  background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%) !important;
-  transition: all 0.3s ease !important;
-  box-shadow: 0 12px 24px -8px rgba(168, 85, 247, 0.5) !important;
-}
-
-:global(.premium-button-success:hover) {
-  transform: translateY(-3px) scale(1.05) !important;
-  box-shadow: 0 18px 36px -8px rgba(168, 85, 247, 0.7) !important;
-}
-
-:global(.premium-button-error) {
-  border-radius: 12px !important;
-  padding: 14px 32px !important;
-  font-weight: 700 !important;
-  transition: all 0.3s ease !important;
-}
-
-:global(.premium-progress-bar) {
-  background: linear-gradient(90deg, #a855f7 0%, #ec4899 100%) !important;
-  height: 6px !important;
-  border-radius: 10px !important;
+  textarea.form-input {
+    min-height: 6.2rem;
+  }
 }
 </style>

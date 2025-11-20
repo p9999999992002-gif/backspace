@@ -1,24 +1,6 @@
 <template>
   <footer class="relative bg-black border-t border-white/10 py-12 md:py-16 md:ml-24">
     <div class="container mx-auto px-6 md:px-12">
-      <!-- Newsletter Section -->
-      <div class="max-w-4xl mx-auto text-center mb-12 md:mb-16 fade-in-up">
-        <h3 class="text-2xl md:text-3xl font-bold text-white mb-3">Mantenha-se Atualizado</h3>
-        <p class="text-gray-400 text-sm md:text-base mb-6">Assine nossa newsletter para receber as últimas atualizações e insights</p>
-        <form @submit.prevent="handleNewsletterSubmit" class="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-          <input 
-            v-model="newsletterEmail"
-            type="email" 
-            placeholder="seu@email.com" 
-            required
-            class="flex-1 px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-white text-sm placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:bg-white/10 transition-all"
-          />
-          <button type="submit" class="bubble-button-gradient px-6 py-3 bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg text-white text-sm font-semibold hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105 whitespace-nowrap relative overflow-hidden">
-            <span class="relative z-10">Assinar</span>
-          </button>
-        </form>
-      </div>
-
       <div class="grid md:grid-cols-3 gap-8 mb-8">
         <!-- Brand -->
         <div class="space-y-4 text-center md:text-left">

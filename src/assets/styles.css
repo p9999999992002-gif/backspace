@@ -285,6 +285,35 @@ img[loading="lazy"].loaded {
 }
 
 /* ========================================
+   SIDEBAR DESKTOP (ESCURO E CLARO)
+   ======================================== */
+.sidebar-desktop {
+  background: #050509;
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+[data-theme="light"] .sidebar-desktop {
+  background: #e1e2e6 !important;
+  border-right: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="light"] .sidebar-desktop .logo,
+[data-theme="light"] .sidebar-desktop img[alt="Backspace"] {
+  filter: brightness(0) saturate(100%);
+}
+
+[data-theme="light"] .sidebar-desktop .nav-dot .dot {
+  background: #b0b1b5 !important;
+}
+
+[data-theme="light"] .sidebar-desktop .nav-dot.active .dot,
+[data-theme="light"] .sidebar-desktop .nav-dot:hover .dot {
+  background: #7c3aed !important;
+  box-shadow: 0 0 12px rgba(124, 58, 237, 0.7);
+}
+
+/* ========================================
    LIGHT THEME - BACKGROUND CINZA MAIS ESCURO
    ======================================== */
 [data-theme="light"] body {
@@ -902,7 +931,6 @@ footer,
 
 /* REATIVA ESTRELAS / BOLINHAS NO MOBILE */
 @media (max-width: 768px) {
-  /* Garante que o fundo de estrelas continue visível */
   #home .stars,
   #home .stars2,
   #home .stars3 {
@@ -911,22 +939,9 @@ footer,
     visibility: visible !important;
   }
 
-  /* Não esconder divs absolutas do hero */
   #home > .absolute {
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
   }
 }
-
-/* MOBILE: cards mais "gordinhos" ocupando melhor a largura */
-@media (max-width: 768px) {
-  .project-card,
-  .service-card {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-    max-width: 100%;
-  }
-}
-
