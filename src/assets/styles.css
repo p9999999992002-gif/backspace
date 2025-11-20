@@ -899,3 +899,22 @@ footer,
     padding-left: 5rem;
   }
 }
+
+/* REATIVA ESTRELAS / BOLINHAS NO MOBILE */
+@media (max-width: 768px) {
+  /* Garante que o fundo de estrelas continue visível */
+  #home .stars,
+  #home .stars2,
+  #home .stars3 {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  /* Não esconder divs absolutas do hero */
+  #home > .absolute {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+}

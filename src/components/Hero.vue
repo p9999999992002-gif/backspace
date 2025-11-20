@@ -1,7 +1,7 @@
 <template>
   <section 
     id="home" 
-    class="relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
+    class="hero-section relative min-h-screen flex items-center justify-center overflow-hidden bg-black"
   >
     <!-- Space Background -->
     <div class="absolute inset-0">
@@ -11,7 +11,7 @@
       <div class="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-transparent to-blue-900/10"></div>
     </div>
 
-    <!-- Torre 3D Animada - Acima do texto no mobile -->
+    <!-- Torre 3D Animada - APENAS DESKTOP -->
     <div class="loader-container">
       <div class="loader">
         <div class="box box-1">
@@ -38,9 +38,9 @@
     </div>
 
     <!-- Content -->
-    <div class="container mx-auto px-6 md:px-12 relative z-10">
+    <div class="content-wrapper container mx-auto px-6 md:px-12 relative z-10">
       <div class="max-w-5xl fade-in-up">
-        <div class="space-y-6 md:space-y-8">
+        <div class="content-spacing">
           <!-- Subtitle -->
           <div class="flex items-center space-x-4">
             <div class="w-12 h-px bg-purple-500"></div>
@@ -48,19 +48,19 @@
           </div>
 
           <!-- Title -->
-          <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight">
+          <h1 class="title-mobile text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight">
             <span class="text-white">A BASE INTELIGENTE</span><br/>
             <span class="text-white">QUE O </span><span class="gradient-text">CRESCIMENTO</span><span class="text-white"> DO</span><br/>
             <span class="text-white">SEU NEGÓCIO PRECISA</span>
           </h1>
 
           <!-- Description -->
-          <p class="text-gray-400 text-base md:text-lg leading-relaxed max-w-3xl">
+          <p class="description-mobile text-gray-400 text-base md:text-lg leading-relaxed max-w-3xl">
             Crescer exige mais que tecnologia: exige estrutura. A <span class="text-white font-semibold">Backspace</span> projeta, de graça, a arquitetura em nuvem perfeita para o seu negócio automatizada, escalável e pronta para o futuro
           </p>
 
           <!-- CTA Buttons -->
-          <div class="pt-4 flex flex-col sm:flex-row gap-4">
+          <div class="buttons-mobile pt-4 flex flex-col sm:flex-row gap-4">
             <button @click="handleContactClick" class="bubble-button inline-flex items-center justify-center space-x-2 group relative overflow-hidden px-6 py-3 bg-transparent border border-white/30 rounded-full transition-all duration-300 hover:border-white hover:bg-white/5">
               <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
@@ -69,7 +69,7 @@
             </button>
 
             <button @click="handleInfrastructureClick" class="bubble-button-gradient inline-flex items-center justify-center space-x-2 group relative overflow-hidden px-6 py-3 bg-gradient-to-r from-purple-600 via-purple-500 to-blue-500 rounded-full transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-105">
-              <span class="relative z-10 text-sm tracking-wide text-white font-semibold">Receba uma infraestrutura personalizada <span class="font-black">GRATUITAMENTE</span></span>
+              <span class="relative z-10 text-sm tracking-wide text-white font-semibold text-center">Receba infraestrutura personalizada <span class="font-black">GRÁTIS</span></span>
               <svg class="w-5 h-5 text-white relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
               </svg>
@@ -80,7 +80,7 @@
     </div>
 
     <!-- Page Number -->
-    <div class="absolute bottom-12 right-12 text-6xl md:text-8xl font-black text-white/5 tracking-tighter pointer-events-none">01</div>
+    <div class="page-number absolute bottom-12 right-12 text-6xl md:text-8xl font-black text-white/5 tracking-tighter pointer-events-none">01</div>
 
     <!-- Scroll Indicator -->
     <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 hidden md:flex flex-col items-center space-y-3">
@@ -296,7 +296,7 @@ export default {
 }
 
 /* ========================================
-   RESPONSIVIDADE
+   RESPONSIVIDADE DESKTOP
    ======================================== */
 @media (max-width: 1600px) {
   .loader-container {
@@ -328,120 +328,110 @@ export default {
 }
 
 /* ========================================
-   MOBILE - TORRE ACIMA DO TEXTO (AJUSTADO)
-======================================== */
+   MOBILE - TEXTO MAIS EM CIMA E ESPAÇADO
+   ======================================== */
 @media (max-width: 768px) {
-  section {
-    margin-left: 0 !important;
-  }
-
+  /* Esconde a torre 3D */
   .loader-container {
-    top: 12%;
-    left: 50%;
-    right: auto;
-    transform: translate(-50%, 0);
-    filter: drop-shadow(0 0 15px rgba(95, 168, 245, 0.3)) 
-            drop-shadow(0 0 30px rgba(47, 133, 224, 0.2));
-  }
-  
-  .loader {
-    scale: 2.2;
-    height: 50px;
-    width: 45px;
-  }
-  
-  .side-left,
-  .side-right {
-    width: 20px;
-    height: 6px;
-    top: 16px;
-  }
-  
-  .side-left {
-    left: 10px;
-  }
-  
-  .side-right {
-    left: -10px;
-  }
-  
-  .side-top {
-    width: 20px;
-    height: 20px;
+    display: none !important;
   }
 
-  /* Adiciona espaço extra no topo do conteúdo */
-  .container {
-    padding-top: 6rem !important;
+  /* Section ocupa altura total com conteúdo mais alto */
+  .hero-section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 100vh;
+    padding-top: 4rem !important;
+    padding-bottom: 2.5rem !important;
+    margin: 0 !important;
+  }
+
+  /* Content wrapper */
+  .content-wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    padding-left: 1.5rem !important;
+    padding-right: 1.5rem !important;
+    margin: 0 auto;
+  }
+
+  /* Espaçamento vertical entre elementos */
+  .content-spacing {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Título mais compacto e em cima */
+  .title-mobile {
+    font-size: 2.1rem !important;
+    line-height: 1.15 !important;
+    margin: 0 !important;
+  }
+
+  /* Descrição com boa leitura */
+  .description-mobile {
+    color: #d1d5db !important;
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+  }
+
+  /* Botões em coluna, mais espaçados */
+  .buttons-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    width: 100%;
+    margin-top: 0.75rem;
+  }
+
+  .bubble-button,
+  .bubble-button-gradient {
+    width: 92%;
+    align-self: center;
+    padding: 0.85rem 1.4rem !important;
+    font-size: 0.88rem !important;
+    justify-content: center;
+    border-radius: 9999px;
+  }
+
+  .bubble-button-gradient span {
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  /* Esconde número da página no mobile */
+  .page-number {
+    display: none;
   }
 }
 
 @media (max-width: 480px) {
-  .loader-container {
-    top: 10%;
-  }
-  
-  .loader {
-    scale: 2;
-    height: 45px;
-    width: 40px;
-  }
-  
-  .side-left,
-  .side-right {
-    width: 18px;
-    height: 5px;
-    top: 14px;
-  }
-  
-  .side-left {
-    left: 9px;
-  }
-  
-  .side-right {
-    left: -9px;
-  }
-  
-  .side-top {
-    width: 18px;
-    height: 18px;
+  .hero-section {
+    padding-top: 3.5rem !important;
   }
 
-  .container {
-    padding-top: 5rem !important;
+  .content-wrapper {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
   }
-}
 
+  .title-mobile {
+    font-size: 1.9rem !important;
+  }
 
-@media (max-width: 480px) {
-  .loader-container {
-    top: 15%;
+  .description-mobile {
+    font-size: 0.88rem !important;
   }
-  
-  .loader {
-    scale: 2.5;
-    height: 45px;
-    width: 40px;
-  }
-  
-  .side-left,
-  .side-right {
-    width: 18px;
-    height: 5px;
-    top: 14px;
-  }
-  
-  .side-left {
-    left: 9px;
-  }
-  
-  .side-right {
-    left: -9px;
-  }
-  
-  .side-top {
-    width: 18px;
-    height: 18px;
+
+  .bubble-button,
+  .bubble-button-gradient {
+    width: 94%;
+    padding: 0.8rem 1.2rem !important;
+    font-size: 0.82rem !important;
   }
 }
 </style>
