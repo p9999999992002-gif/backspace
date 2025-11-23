@@ -17,6 +17,7 @@ app.use(cors({
 }));
 app.use(express.json());
 
+
 // Configuração do Nodemailer com variáveis de ambiente
 const transporter = nodemailer.createTransport({
   service: 'gmail',

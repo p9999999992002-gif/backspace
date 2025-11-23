@@ -24,7 +24,7 @@
         <div class="text-center md:text-left">
           <h4 class="text-white font-bold mb-4 text-sm tracking-widest">CONTATO</h4>
           <ul class="space-y-2 text-sm text-gray-400">
-            <li>contato@backspace.dev.com</li>
+            <li>contato@backspace.dev.br</li>
             <li>São Paulo, SP - Brasil</li>
           </ul>
         </div>
@@ -71,7 +71,7 @@ export default {
     },
     checkTheme() {
       const theme = document.documentElement.getAttribute('data-theme')
-      this.currentLogo = theme === 'light' ? '/logolight.png' : '/logo.png'
+      this.currentLogo = theme === 'light' ? '/logolight2.png' : '/logo.png'
     }
   }
 }

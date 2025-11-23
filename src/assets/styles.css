@@ -279,8 +279,17 @@ img[loading="lazy"].loaded {
   border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
   box-shadow: 2px 0 12px rgba(0, 0, 0, 0.04);
 }
+/* ========================================
+   LIGHT THEME - BOTÃO TEXTO PRETO
+   ======================================== */
+[data-theme="light"] .bubble-button-gradient svg {
+  color: #ffffff !important;
+}
 
-[data-theme="light"] .logo {
+
+
+
+/*[data-theme="light"] .logo {
   filter: brightness(0) saturate(100%);
 }
 
@@ -298,7 +307,7 @@ img[loading="lazy"].loaded {
   box-shadow: 2px 0 12px rgba(0, 0, 0, 0.06);
 }
 
-[data-theme="light"] .sidebar-desktop .logo,
+/*[data-theme="light"] .sidebar-desktop .logo,
 [data-theme="light"] .sidebar-desktop img[alt="Backspace"] {
   filter: brightness(0) saturate(100%);
 }

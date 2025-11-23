@@ -178,7 +178,7 @@ export default {
     checkTheme() {
       const theme = document.documentElement.getAttribute('data-theme')
       this.currentLogo = theme === 'light'
-        ? `${import.meta.env.BASE_URL}logolight.png`
+        ? `${import.meta.env.BASE_URL}logolight2.png`
         : `${import.meta.env.BASE_URL}logo.png`
     }
   }

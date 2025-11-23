@@ -68,16 +68,21 @@
 
           <!-- CTA Buttons -->
           <div class="buttons-mobile pt-4 flex flex-col sm:flex-row gap-4">
-            <button @click="handleContactClick" class="bubble-button inline-flex items-center justify-center space-x-2 group relative overflow-hidden px-6 py-3 bg-transparent border border-white/30 rounded-full transition-all duration-300 hover:border-white hover:bg-white/5">
+            <a 
+              href="https://wa.me/5511963168533?text=Olá!%20Vim%20pelo%20site%20Backspace%20e%20gostaria%20de%20mais%20informações" 
+              target="_blank"
+              class="bubble-button inline-flex items-center justify-center space-x-2 group relative overflow-hidden px-6 py-3 bg-transparent border border-white/30 rounded-full transition-all duration-300 hover:border-white hover:bg-white/5">
               <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
               </svg>
               <span class="relative z-10 text-sm tracking-wide text-white font-medium">Entrar em contato</span>
-            </button>
-
+            </a>
             <button @click="handleInfrastructureClick" class="bubble-button-gradient inline-flex items-center justify-center space-x-2 group relative overflow-hidden px-6 py-3 bg-gradient-to-r from-purple-600 via-purple-500 to-blue-500 rounded-full transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/50 hover:scale-105">
-              <span class="relative z-10 text-sm tracking-wide text-white font-semibold text-center">Receba infraestrutura personalizada <span class="font-black">GRÁTIS</span></span>
-              <svg class="w-5 h-5 text-white relative z-10 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <span class="relative z-10 text-sm tracking-wide font-semibold text-center" style="color: #ffffff !important;">
+                Receba infraestrutura personalizada 
+                <span class="font-black" style="color: #ffffff !important;">GRÁTIS</span>
+              </span>
+              <svg class="w-5 h-5 relative z-10 group-hover:translate-x-1 transition-transform" style="color: #ffffff !important;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
               </svg>
             </button>
